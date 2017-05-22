@@ -1,0 +1,501 @@
+<div ng-controller="demo.dataTableCtrl">
+	<div class="c-body-box">
+		<p class="c-line-title"><i class="fa fa-file-text-o"></i> 使用说明</p>
+		<div class="row">
+			<div class="col-md-12">
+				<div class="col-md-12">
+					<p class="c-sub-line-title">描述：</p>
+					<section class="c-content-txt">
+						<code>
+						数据表格简单的数据列表展示，包含了分页相关功能、后台请求数据与直接设置数据功能、自定义字段数据展示功能，过于复杂的数据展示请用数据分页器。
+						</code>
+					</section>
+
+					<p class="c-sub-line-title">使用：</p>
+					<section class="c-content-txt">
+						<pre>
+							<code>
+html部分
+参考示例
+
+JS部分
+
+//数据
+var data = [{
+	"num": "10001",
+	"name": "钱一",
+	"age": 16,
+	"salary": 25355656,
+	"phone": "18950950213",
+	"createTime": "2016-02-25 20:25:12"
+}, {
+	"num": "10002",
+	"name": "王二",
+	"age": 32,
+	"salary": 525355656,
+	"phone": "18950950213",
+	"createTime": "2016-02-25 20:25:12"
+}, {
+	"num": "10003",
+	"name": "张三",
+	"age": 25,
+	"salary": 255355656,
+	"phone": "18358013642",
+	"createTime": "2016-02-25 20:25:12"
+}, {
+	"num": "10004",
+	"name": "李四",
+	"age": 20,
+	"salary": 253556,
+	"phone": "18558013565",
+	"createTime": "2016-02-25 20:25:12"
+}, {
+	"num": "10005",
+	"name": "王五",
+	"age": 30,
+	"salary": 55656,
+	"phone": "18958013552",
+	"createTime": "2016-02-25 20:25:12"
+}, {
+	"num": "10006",
+	"name": "赵六",
+	"age": 32,
+	"salary": 5656,
+	"phone": "18958015327",
+	"createTime": "2016-02-25 20:25:12"
+}, {
+	"num": "10007",
+	"name": "马七",
+	"age": 37,
+	"salary": 25355656000,
+	"phone": "18958035552",
+	"createTime": "2016-02-25 20:25:12"
+}, {
+	"num": "10008",
+	"name": "刘八",
+	"age": 60,
+	"salary": 56,
+	"phone": "13558606352",
+	"createTime": "2016-02-25 20:25:12"
+}, {
+	"num": "10009",
+	"name": "孙九",
+	"age": 26,
+	"salary": 85655656,
+	"phone": "18695815352",
+	"createTime": "2016-02-25 20:25:12"
+}, {
+	"num": "10010",
+	"name": "周十",
+	"age": 40,
+	"salary": 6,
+	"phone": "15662561352",
+	"createTime": "2016-02-25 20:25:12"
+}, {
+	"num": "10011",
+	"name": "陈年",
+	"age": 30,
+	"salary": 0,
+	"phone": "17655013552",
+	"createTime": "2016-02-25 20:25:12"
+}, {
+	"num": "10012",
+	"name": "林杰",
+	"age": 50,
+	"salary": 10,
+	"phone": "18980153522",
+	"createTime": "2016-02-25 20:25:12"
+}, {
+	"num": "10013",
+	"name": "张明",
+	"age": 10,
+	"salary": 0,
+	"phone": "16958013522",
+	"createTime": "2016-02-25 20:25:12"
+}, {
+	"num": "10014",
+	"name": "许丽",
+	"age": 25,
+	"salary": 100,
+	"phone": "18958013524",
+	"createTime": "2016-02-25 20:25:12"
+}, {
+	"num": "10015",
+	"name": "上官丹凤",
+	"age": 30,
+	"salary": 3660,
+	"phone": "18958301352",
+	"createTime": "2016-02-25 20:25:12"
+}];
+
+//配置
+$scope.dataTableConfig = {
+	tableCls: 'c-line-table table-hover',  //表格样式
+	serialNumber: true,                    //显示序号
+	pagination: true,                      //是否显示分页
+	pageList: [5, 10, 15],                 //分页条数列表
+	dataEmptyMsg: '暂无数据...',             //暂无数据提示消息
+	columns: [{
+		title: '编号',  //字段标题
+		field: 'num',  //字段名
+		headerCls: 'col-md-1 text-center', //表头样式
+		fieldCls: 'text-center'    //字段样式
+	}, { //字段
+		title: '姓名',
+		field: 'name',
+		headerCls: 'col-md-1 text-center',
+		type: 'render',   //类型
+		render: function(val, column, rowData，rowIndex, columnIndex, dataListName) {  //render函数，参数分别是val(当前值)、column(字段名)、rowData(行数据)、rowIndex(行索引)、columnIndex(列索引)、dataListName（数据列表名，给event时使用的，请参考示例）
+			return  rowData['name'];
+	    }
+	}, {
+		title: '电话',
+		field: 'phone',
+		headerCls: 'col-md-2 text-center',
+		fieldCls: 'text-center',
+		type: 'render',
+		render: function(val, column, rowData, rowIndex, columnIndex, dataListName) {
+			return  val;
+		}
+	}, {
+		title: '薪水',
+		field: 'salary',
+		headerCls: 'col-md-2 text-center',
+		fieldCls: 'text-center',
+		type: 'render',
+		render: function(val, column, rowData, rowIndex, columnIndex, dataListName) { 
+			return  $filter('salaryFormat')(val);
+		}
+	}, {
+		title: '创建时间',
+		field: 'createTime',
+		headerCls: 'col-md-2 text-center',
+		type: 'render',
+		render: function(val, column, rowData, rowIndex, columnIndex, dataListName) {
+			return  $filter('date')(new Date(val), 'yyyy-MM-dd');
+			}
+	}, {
+		title: '操作',
+		field: 'phone',
+		headerCls: 'col-md-3 text-left',
+		fieldCls: 'text-left',
+		type: 'action',
+		buttons: [{  //按钮列表
+			title: '查看',
+			btnCls: 'btn-sm btn-info',
+			action: 'view',
+		}, {
+			title: '删除',//按钮名称
+			btnCls: 'btn-sm btn-danger',//按钮样式
+			action: 'delete', //动作名称
+			visible: 'item["age"]>30',//条件
+		}]
+	}],
+	data: data
+}
+
+//事件
+$scope.dataTableEvent = function(act, item) {
+	console.info(act);
+	console.info(item);
+}
+
+//搜索
+$scope.search = function() {
+	console.info("search 只用于后台请求");
+	$scope.dataTableSearch({
+		'name':'张三' 
+	});
+}
+						</code>
+						</pre>
+					</section>
+
+					<p class="c-sub-line-title">API说明：</p>
+					<section class="c-content-txt">
+						<table class="table table-bordered table-hover">
+							<thead>
+								<tr>
+									<th class="text-left col-md-2">参数</th>
+									<th class="text-left col-md-2">默认值</th>
+									<th class="text-left col-md-8">说明</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td class="text-left">
+										options
+									</td>
+									<td class="text-left">
+
+									</td>
+									<td class="text-left">
+										配置属性
+									</td>
+								</tr>
+								<tr>
+									<td class="text-left">
+										options.url
+									</td>
+									<td class="text-left">
+										空
+									</td>
+									<td class="text-left">
+										服务器端请求地址
+									</td>
+								</tr>
+								<tr>
+									<td class="text-left">
+										options.sort
+									</td>
+									<td class="text-left">
+										空
+									</td>
+									<td class="text-left">
+										服务器端排序参数
+									</td>
+								</tr>
+								<tr>
+									<td class="text-left">
+										options.url
+									</td>
+									<td class="text-left">
+										空
+									</td>
+									<td class="text-left">
+										服务器端请求地址
+									</td>
+								</tr>
+								<tr>
+									<td class="text-left">
+										options.method
+									</td>
+									<td class="text-left">
+										POST
+									</td>
+									<td class="text-left">
+										服务器端请求方式
+									</td>
+								</tr>
+								<tr>
+									<td class="text-left">
+										options.param
+									</td>
+									<td class="text-left">
+										{}
+									</td>
+									<td class="text-left">
+										服务器端请求参数
+									</td>
+								</tr>
+								<tr>
+									<td class="text-left">
+										options.tableCls
+									</td>
+									<td class="text-left">
+										table table-bordered  table-hover
+									</td>
+									<td class="text-left">
+										表格样式
+									</td>
+								</tr>
+								<tr>
+									<td class="text-left">
+										options.serialNumber
+									</td>
+									<td class="text-left">
+										false
+									</td>
+									<td class="text-left">
+										序号
+									</td>
+								</tr>
+								<tr>
+									<td class="text-left">
+										options.pagination
+									</td>
+									<td class="text-left">
+										true
+									</td>
+									<td class="text-left">
+										是否分页
+									</td>
+								</tr>
+								<tr>
+									<td class="text-left">
+										options.pageList
+									</td>
+									<td class="text-left">
+										[10, 20, 30, 50, 100, 150, 200]
+									</td>
+									<td class="text-left">
+										分页中每页显示条数
+									</td>
+								</tr>
+								<tr>
+									<td class="text-left">
+										options.dataEmptyMsg
+									</td>
+									<td class="text-left">
+										暂无数据...
+									</td>
+									<td class="text-left">
+										列表无数据时提示信息
+									</td>
+								</tr>
+								<tr>
+									<td class="text-left">
+										options.data
+									</td>
+									<td class="text-left">
+										[]
+									</td>
+									<td class="text-left">
+										数据，当url不存在时，使用data中的数据
+									</td>
+								</tr>
+								<tr>
+									<td class="text-left">
+										options.columns
+									</td>
+									<td class="text-left">
+										[]
+									</td>
+									<td class="text-left">
+										列表中的字段格式
+									</td>
+								</tr>
+								<tr>
+									<td class="text-left">
+										options.columns.title
+									</td>
+									<td class="text-left">
+										空
+									</td>
+									<td class="text-left">
+										字段标题
+									</td>
+								</tr>
+								<tr>
+									<td class="text-left">
+										options.columns.field
+									</td>
+									<td class="text-left">
+										
+									</td>
+									<td class="text-left">
+										字段名
+									</td>
+								</tr>
+								<tr>
+									<td class="text-left">
+										options.columns.headerCls
+									</td>
+									<td class="text-left">
+										空
+									</td>
+									<td class="text-left">
+										字段头样式
+									</td>
+								</tr>
+								<tr>
+									<td class="text-left">
+										options.columns.fieldCls
+									</td>
+									<td class="text-left">
+										空
+									</td>
+									<td class="text-left">
+										字段样式
+									</td>
+								</tr>
+								<tr>
+									<td class="text-left">
+										options.columns.type
+									</td>
+									<td class="text-left">
+										文本
+									</td>
+									<td class="text-left">
+										类型，分别为：render（函数）、action（按钮）、文本，具体使用参考示例
+									</td>
+								</tr>
+								<tr>
+									<td class="text-left">
+										options.columns.buttons
+									</td>
+									<td class="text-left">
+										无
+									</td>
+									<td class="text-left">
+										当类型为action时有效，具体参考示例
+									</td>
+								</tr>
+								<tr>
+									<td class="text-left">
+										event
+									</td>
+									<td class="text-left">
+
+									</td>
+									<td class="text-left">
+										表格事件
+									</td>
+								</tr>
+								<tr>
+									<td class="text-left">
+										search
+									</td>
+									<td class="text-left">
+
+									</td>
+									<td class="text-left">
+										服务器端查询函数
+									</td>
+								</tr>
+
+							</tbody>
+						</table>
+					</section>
+
+				</div>
+			</div>
+		</div>
+
+		<p class="c-line-title c-margin-t15"> <i class="fa fa-file-code-o"></i> 示例</p>
+		<div class="row">
+			<div class="col-md-12">
+				<div class="col-md-12">
+
+					<div class="c-search-box">
+						<form class="form-horizontal" role="form" method='post'>
+
+							<div class="row">
+								<div class="col-md-4">
+									<label class="col-md-3 control-label">用户名：</label>
+									<div class="col-md-9">
+										<input type="email" class="form-control">
+									</div>
+								</div>
+								<div class="col-md-4">
+									<label class="col-md-3 control-label">真实姓名：</label>
+									<div class="col-md-9">
+										<input type="email" class="form-control">
+									</div>
+								</div>
+								<div class="col-md-4">
+									<button type="button" class="btn btn-primary" ng-click="search();"><i class="fa fa-search fa-fw"></i> 查询</button>
+								</div>
+							</div>
+
+						</form>
+					</div>
+					<div cjhme-data-table options="dataTableConfig" event="dataTableEvent" search="dataTableSearch"></div>
+
+				</div>
+			</div>
+		</div>
+
+	</div>
+
+</div>

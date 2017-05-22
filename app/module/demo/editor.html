@@ -1,0 +1,33 @@
+<div ng-controller="demo.editorCtrl">
+	<div class="c-body-box">
+		<p class="c-line-title"><i class="fa fa-file-text-o"></i> 使用说明</p>
+		<div class="row">
+			<div class="col-md-12">
+				<div class="col-md-12">
+					<p class="c-sub-line-title">描述：</p>
+					<section class="c-content-txt">
+						<code>
+						   百度富文本编器指令，依赖于百度富文本编器与angularUeditor指令封装，具体参考：
+						   <a href="http://ueditor.baidu.com/website/onlinedemo.html" target="_blank">点击进入百度ueditor</a>
+						   <a href="https://github.com/zqjimlove/angular-ueditor" target="_blank"> 点击进入angularUeditor</a>
+						</code>
+					</section>
+
+				</div>
+			</div>
+		</div>
+
+		<p class="c-line-title c-margin-t15"> <i class="fa fa-file-code-o"></i> 示例</p>
+		<div class="row">
+			<div class="col-md-12">
+				<div class="col-md-12">
+					<p class="c-sub-line-title">所有示例</p>
+					<div class="ueditor" config="configAll" ng-model="content"></div>
+
+					<p class="c-sub-line-title">自定义示例</p>
+					<div class="ueditor" config="config" ng-model="content2" style="width:100%"></div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

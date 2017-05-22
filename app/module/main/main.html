@@ -1,0 +1,173 @@
+<div class="row" ng-controller="main.mainCtrl">
+	<div class="col-md-6">
+
+		<div class="panel c-panel-w">
+			<div class="panel-heading">
+				<div class="pull-right">
+					<a ng-click="userInfoToolsEvent('collapse')">
+						<em class="fa fa-minus"></em>
+					</a>
+				</div>
+
+				<div class="panel-title"><i class="fa fa-user fa-fw"></i> 我的信息</div>
+			</div>
+			<div class="panel-body" uib-collapse="isCollapsedUserInfo">
+				<div class="form-group" style="height: 256px;">
+					<div class="col-md-12">
+						<div class="pull-left text-center" style="width:235px;margin-right: 15px;">
+							<div class="form-group">
+							<img src="http://127.0.0.1:8020/cjhme-admin/app/img/t-001.jpg" alt="" class="img-circle" style="width:205px;height:205px">
+							</div>
+							<div class="form-group">
+							<div class="col-md-12">
+								<button type="button" class="btn btn-primary btn-sm" ng-click="userInfoEvent('userInfoView');"><i class="fa fa-user fa-fw"></i> 个人资料</button>&nbsp;
+								<button type="button" class="btn btn-success btn-sm" ng-click="userInfoEvent('userPwdEdit');"><i class="fa fa-key fa-fw"></i> 修改密码</button>
+							</div>
+							</div>
+						</div>
+						<div class="pull-left col-md-6">
+							<table class="col-md-12 table c-not-border">
+								<tbody>
+									<tr>
+										<td class="col-md-12">姓名：百变小咖</td>
+									</tr>
+									<tr>
+										<td class="col-md-12">联系电话：18950595263</td>
+									</tr>
+									<tr>
+										<td class="col-md-12">邮箱：332557712@qq.com</td>
+									</tr>
+									<tr>
+										<td class="col-md-12">登录次数：266</td>
+									</tr>
+									<tr>
+										<td class="col-md-12">上次登录：2016-10-08 20:15:36</td>
+									</tr>
+									<tr>
+										<td class="col-md-12">本次登录：2016-10-09 15:15:36</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="panel c-panel-w">
+			<div class="panel-heading">
+				<div class="pull-right">
+					<a ng-click="taskToolsEvent('collapse')">
+						<em class="fa fa-minus"></em>
+					</a>
+				</div>
+
+				<div class="panel-title"><i class="fa fa-bell-o fa-fw"></i> 待办</div>
+			</div>
+			<div class="panel-body" uib-collapse="isCollapsedTask">
+				<table class="c-line-table">
+					<tr>
+						<td class="col-md-9">
+							<span class="c-color-red"><i class="fa fa-info fa-fw c-fa"></i>您共有 <big ng-bind="taskObj.total">20</big> 条未处理待办信息</span>
+						</td>
+						<td class="col-md-3 text-right">
+							<a class="c-a-red">查看更多&gt;&gt;</a>
+						</td>
+					</tr>
+				</table>
+				<table class="c-line-table table-hover">
+					<tbody>
+						<tr ng-repeat="task in taskObj.taskList">
+							<td class="col-md-1" ng-bind="$index+1">
+							</td>
+							<td class="col-md-8">
+								<span class="label label-success" ng-bind="task.submitUser" style="vertical-align: 2px"></span>&nbsp;
+								<span ng-bind="task.title"></span>
+							</td>
+							<td class="col-md-3 text-right" ng-bind="task.createDate">
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+
+	</div>
+	<div class="col-md-6">
+
+		<div class="panel c-panel-w">
+			<div class="panel-heading">
+				<div class="pull-right">
+					<a ng-click="noticeToolsEvent('collapse')">
+						<em class="fa fa-minus"></em>
+					</a>
+				</div>
+
+				<div class="panel-title"><i class="fa fa-bullhorn fa-fw"></i> 通知</div>
+			</div>
+			<div class="panel-body" uib-collapse="isCollapsedNotice">
+				<table class="c-line-table">
+					<tr>
+						<td class="col-md-9">
+							<span class="c-color-green"><i class="fa fa-info fa-fw c-fa"></i>您共有 <big ng-bind="noticeObj.total">20</big> 条通知</span>
+						</td>
+						<td class="col-md-3 text-right">
+							<a class="c-a-green">查看更多&gt;&gt;</a>
+						</td>
+					</tr>
+				</table>
+				<table class="c-line-table table-hover">
+					<tbody>
+						<tr ng-repeat="notice in noticeObj.noticeList">
+							<td class="col-md-1" ng-bind="$index+1">
+							</td>
+							<td class="col-md-8" ng-bind="notice.title">
+							</td>
+							<td class="col-md-3 text-right" ng-bind="notice.createDate">
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+
+		<div class="panel c-panel-w">
+			<div class="panel-heading">
+				<div class="pull-right">
+					<a ng-click="memoToolsEvent('collapse')">
+						<em class="fa fa-minus"></em>
+					</a>
+				</div>
+
+				<div class="panel-title"><i class="fa fa-tag fa-fw"></i> 备忘</div>
+			</div>
+			<div class="panel-body" uib-collapse="isCollapsedMemo">
+				<table class="c-line-table">
+					<tr>
+						<td class="col-md-9">
+							<span class="c-color-orange"><i class="fa fa-info fa-fw c-fa"></i>您共有 <big ng-bind="noticeObj.total">20</big> 条未查看备忘信息</span>
+						</td>
+						<td class="col-md-3 text-right">
+							<a class="c-a-orange">查看更多&gt;&gt;</a>
+						</td>
+					</tr>
+				</table>
+				<table class="c-line-table table-hover">
+					<tbody>
+						<tr ng-repeat="memo in memoObj.memoList">
+							<td class="col-md-1" ng-bind="$index+1">
+							</td>
+							<td class="col-md-8" ng-bind="memo.title">
+							</td>
+							<td class="col-md-3 text-right" ng-bind="memo.createDate">
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+
+	</div>
+
+</div>

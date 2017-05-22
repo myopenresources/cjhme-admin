@@ -1,0 +1,76 @@
+<div class="c-r-header">
+	<div class="c-title">
+		<a class="btn btn-default" ng-click="toggleLeft();">
+			<i class="fa fa-dedent fa-fw" ng-show="!closeWrapper" tooltip-placement="right" uib-tooltip="点击关闭右边栏"></i>
+			<i class="fa fa-indent fa-fw" ng-show="closeWrapper" tooltip-placement="right" uib-tooltip="点击展开右边栏"></i>
+		</a>
+		<span ng-bind="pageTitle"></span>
+	</div>
+
+	<div class="c-tools">
+		<ul class="nav nav-pills navbar-right" role="tablist">
+			<li role="presentation">
+				<a href="" ng-click="toMainPage();" class="dropdown-toggle">
+					<i class="fa fa-home fa-fw c-fa"></i> 首页
+				</a>
+			</li>
+			<li role="presentation">
+				<a href="" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					<i class="fa fa-coffee fa-fw c-fa"></i> 主题
+				</a>
+				<ul class="dropdown-menu c-list animated fadeIn">
+					<li>
+						<div class="c-default" ng-click="selectTheme('default-theme');">
+							默认主题
+						</div>
+					</li>
+					<li>
+						<div class="c-green" ng-click="selectTheme('green-theme');">
+							绿色主题
+						</div>
+					</li>
+					<li>
+						<div class="c-blue" ng-click="selectTheme('blue-theme');">
+							蓝色主题
+						</div>
+					</li>
+					<li>
+						<div class="c-black" ng-click="selectTheme('black-theme');">
+							黑色主题
+						</div>
+					</li>
+					<li>
+						<div class="c-red" ng-click="selectTheme('red-theme');">
+							红色主题
+						</div>
+					</li>
+					<li>
+						<div class="c-orange" ng-click="selectTheme('orange-theme');">
+							橙色主题
+						</div>
+					</li>
+					<li>
+						<div class="c-gradient-blue" ng-click="selectTheme('gradient-blue-theme');">
+							渐变蓝主题
+						</div>
+					</li>
+					<li>
+						<div class="c-gradient-green" ng-click="selectTheme('gradient-green-theme');">
+							渐变绿主题
+						</div>
+					</li>
+				</ul>
+			</li>
+			<li role="presentation">
+				<a  href="" ng-click="exitSys();" class="dropdown-toggle">
+					<i class="fa fa-sign-out fa-fw c-fa"></i> 退出 
+				</a>
+			</li>
+		</ul>
+	</div>
+</div>
+
+<div ng-style="cStyle" class="c-r-content">
+	<div class="animated fadeIn" ui-view="main">
+	</div>
+</div>

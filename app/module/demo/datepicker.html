@@ -1,0 +1,131 @@
+<div ng-controller="demo.datepickerCtrl">
+	<div class="c-body-box">
+		<p class="c-line-title"><i class="fa fa-file-text-o"></i> 使用说明</p>
+		<div class="row">
+			<div class="col-md-12">
+				<div class="col-md-12">
+					<p class="c-sub-line-title">描述：</p>
+					<section class="c-content-txt">
+						<code>
+						 日期选择与时间选择是基于 bootstrapDatePicker与bootstrapDatetimePicker进行指令化的。
+						</code>
+					</section>
+
+					<p class="c-sub-line-title">使用：</p>
+					<section class="c-content-txt">
+						<pre>
+							<code>
+html部分
+参考示例
+
+JS部分
+$scope.myDate;
+
+$scope.myDateTime;
+
+$scope.callback = function(val, formatVal) {
+	console.info(val + "-" + formatVal);
+}
+							</code>
+						</pre>
+					</section>
+					<p class="c-sub-line-title">API说明：</p>
+					<section class="c-content-txt">
+						<table class="table table-bordered table-hover">
+							<thead>
+								<tr>
+									<th class="text-left col-md-2">参数</th>
+									<th class="text-left col-md-2">默认值</th>
+									<th class="text-left col-md-8">说明</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td class="text-left">
+										options
+									</td>
+									<td class="text-left">
+
+									</td>
+									<td class="text-left">
+										配置属性
+									</td>
+								</tr>
+								<tr>
+									<td class="text-left">
+										format
+									</td>
+									<td class="text-left">
+										yyyy-mm-dd
+									</td>
+									<td class="text-left">
+										格式
+									</td>
+								</tr>
+								<tr>
+									<td class="text-left">
+										setStartDate
+									</td>
+									<td class="text-left">
+										
+									</td>
+									<td class="text-left">
+										开始时间
+									</td>
+								</tr>
+								<tr>
+									<td class="text-left">
+										setEndDate
+									</td>
+									<td class="text-left">
+										
+									</td>
+									<td class="text-left">
+										结束时间
+									</td>
+								</tr>
+								<tr>
+									<td class="text-left">
+										callback
+									</td>
+									<td class="text-left">
+										
+									</td>
+									<td class="text-left">
+										回调函数
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</section>
+				</div>
+			</div>
+		</div>
+
+		<p class="c-line-title c-margin-t15"> <i class="fa fa-file-code-o"></i> 示例</p>
+		<div class="row">
+			<div class="col-md-12">
+				<div class="col-md-12">
+					<form class="form-horizontal" role="form">
+						<div class="form-group">
+							<div class="col-md-6">
+								<label class="col-sm-3 control-label">日期选择</label>
+								<div class="col-md-9 input-icon">
+									<i class="fa fa-calendar fa-fw"></i>
+									<input type="text" name='myDate' placeholder="请选择日期" class="form-control" cjhme-date-picker format="yyyy-mm-dd" ng-model="myDate" callback="callback" />
+								</div>
+							</div>
+							<div class="col-md-6">
+								<label class="col-sm-3 control-label">日期选择</label>
+								<div class="col-md-9 input-icon">
+									<i class="fa fa-calendar fa-fw"></i>
+									<input type="text" name='myDateTime' placeholder="请选择时间" class="form-control" cjhme-datetime-picker format="yyyy-mm-dd hh:ii:ss" ng-model="myDateTime" callback="callback" />
+								</div>
+							</div>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,45 @@
+<div ng-controller="user.userPwdEditCtrl">
+	<div class="c-body-box">
+		<form class="form-horizontal" role="form" method='post'>
+			<p class="c-line-title">密码信息</p>
+			<div class="form-group">
+				<div class="form-group">
+					<div class="col-md-6">
+						<label class="col-md-3 control-label">帐号：</label>
+						<div class="col-md-9">
+							<div class="form-control" ng-bind="formObj.userName"></div>
+						</div>
+					</div>
+					<div class="col-md-6">
+						<label class="col-md-3 control-label"><span class="text-danger">*</span> 旧密码：</label>
+						<div class="col-md-9">
+							<input type="password" class="form-control" placeholder="请输入旧密码" ng-model="formObj.password">
+						</div>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<div class="col-md-6">
+						<label class="col-md-3 control-label"><span class="text-danger">*</span> 新密码：</label>
+						<div class="col-md-9">
+							<input type="password" class="form-control" placeholder="请输入新密码" ng-model="formObj.password">
+						</div>
+					</div>
+					<div class="col-md-6">
+						<label class="col-md-3 control-label"><span class="text-danger">*</span> 确认密码：</label>
+						<div class="col-md-9">
+							<input type="password" class="form-control" placeholder="请输入确认密码" ng-model="formObj.password">
+						</div>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="col-md-offset-1 col-md-10">
+						<button type="button" class="btn btn-primary" ng-click="save();"><i class="fa fa-save fa-fw"></i> 保存</button>&nbsp;
+						<button type="button" class="btn btn-success" ng-click="back();"><i class="fa fa-backward fa-fw"></i> 返回</button>
+					</div>
+				</div>
+			</div>
+		</form>
+	</div>
+</div>

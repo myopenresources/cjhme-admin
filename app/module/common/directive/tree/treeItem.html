@@ -1,0 +1,7 @@
+<i ng-click="nodeExpended(node, $event);" class="c-icon fa" ng-class="{'fa-chevron-circle-down': !isLeaf(node) && node.isExpend, 'fa-chevron-circle-right': !isLeaf(node) &&!node.isExpend}" style="width:10px"></i>
+<input type="checkbox" ng-model="node.isChecked"  class="c-check-box" ng-show="initShowCheckbox(node);" ng-init="initChecked(node)" ng-change="onCheckboxChanged(node, $event);">
+<span class='c-text-field'><i class="fa {{node.icon}}" style="color:{{node.color}}"></i> <span ng-click="onNodeClicked(node, $event);">{{node.name}}</span></span>
+<ul ng-if="!isLeaf(node)" ng-show="node.isExpend" ng-class="options.animatedCls">
+	<li ng-repeat="node in node.children" ng-include="templateUrl()">
+	</li>
+</ul>

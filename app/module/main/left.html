@@ -1,0 +1,13 @@
+<nav role="navigation" class="c-l-header">
+	<div class="c-brand-logo" ng-click="toMainPage();" tooltip-placement="bottom" uib-tooltip="后台管理系统">
+		<img src="../app/img/logo.png" />
+		<h3>后台管理系统</h3>
+	</div>
+
+	<div ng-style="cStyle" class="c-nav">
+		<div style="padding-top:3px">
+			<cjhme-nav-view nav-data="menuObj"  item-clicked="toPage($item)"></cjhme-nav-view>
+		</div>
+	</div>
+
+</nav>

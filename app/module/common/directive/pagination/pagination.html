@@ -1,0 +1,25 @@
+<div class="row">
+	<div class="col-md-12">
+		<div class="btn-group-sm pull-right">
+			<button type="button" class="btn btn-default btn-sm" ng-disabled="options.pageNumber==1 || options.pageTotal==0" ng-click="pageChanged('fristPage');"><i class="fa fa-angle-left" ></i></button>
+			<button type="button" class="btn btn-default btn-sm" ng-disabled="options.pageNumber==1 || options.pageTotal==0" ng-click="pageChanged('previousPage');"><i class="fa fa-angle-double-left" ></i></button>
+			<button type="button" class="btn btn-default btn-sm" ng-disabled="options.pageTotal==0" ng-click="pageChanged('refresh');"><i class="fa fa-refresh"></i></button>
+			<button type="button" class="btn btn-default btn-sm" ng-disabled="options.pageNumber==options.pageTotal || options.pageTotal==0" ng-click="pageChanged('nextPage');"><i class="fa fa-angle-double-right" ></i></button>
+			<button type="button" class="btn btn-default btn-sm" ng-disabled="options.pageNumber==options.pageTotal || options.pageTotal==0" ng-click="pageChanged('lastPage');"><i class="fa fa-angle-right" ></i></button>
+		</div>
+
+		<div class="btn-group pull-left" style="margin-top:5px">
+			显示 <span ng-bind="options.pageTotal"></span> 页，
+			<span ng-if="options.pageTotal>0"> 每页
+		<select ng-model="options.pageSize" ng-change="pageSizeChanged(options.pageSize);" ng-options="item for item in options.pageList">
+		</select> 条数据，
+	</span>
+			<span ng-if="options.pageTotal<=0"> 
+		每页<span ng-bind="options.pageSize"></span> 条数据，
+			</span>
+
+			当前第 <span ng-bind="options.pageNumber"></span> 页, 共 <span ng-bind="options.total"></span> 条数据
+		</div>
+
+	</div>
+</div>

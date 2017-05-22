@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="zh" ng-app="cjhme" ng-controller="cjhme.indexCtrl">
+
+	<head>
+		<meta charset="utf-8">
+		<title>cjhme-admin</title>
+		<link rel="stylesheet" href="lib/bootstrap/css/bootstrap.css" />
+		<link rel="stylesheet" href="lib/fontawesome/css/font-awesome.min.css">
+		<link rel="stylesheet" href="lib/animate/animate.min.css">
+		<link rel="stylesheet" href="lib/bootstrapDatePicker/css/bootstrap-datepicker.min.css">
+		<link rel="stylesheet" href="lib/bootstrapDatetimePicker/css/bootstrap-datetimepicker.min.css">
+		<link rel="stylesheet" href="lib/angularuiSwitch/css/angular-ui-switch.min.css">
+		<link rel="stylesheet" href="lib/angularuiSelect/css/select.min.css">
+		<link rel="stylesheet" href="lib/ueditor/themes/default/css/ueditor.min.css">
+		
+		<link rel="stylesheet" href="css/custom.css" />
+		<link rel="stylesheet"  href="css/app.css"/>
+		<link rel="stylesheet"  ng-href="css/{{theme}}.css"/>
+		
+		<link type="image/x-icon" rel="shortcut icon" href="../favicon.ico" />
+
+	</head>
+
+	<body>
+		
+		<div class="c-wrapper" page-resize>
+			<!--左边 -->
+			<aside   ng-style="hStyle" ng-class="{true:'left-wrapper-c',false:'left-wrapper'}[closeWrapper]" ng-include="'module/main/left.html'"></aside>
+			<!--右边 -->
+			<section ng-style="hStyle" ng-class="{true:'right-wrapper-c',false:'right-wrapper'}[closeWrapper]" ng-include="'module/main/right.html'"></section>
+		</div>
+
+        <script src="lib/jquery/jquery.min.js"></script>
+        <script src="lib/bootstrap/js/bootstrap.min.js"></script>
+		<script src="lib/angular/angular.js"></script>
+		<script src="lib/angularui/angular-locale_zh-cn.js"></script>
+		<script src="lib/angularui/angular-ui-router.js"></script>
+		<script src="lib/uiBootstrap/ui-bootstrap-tpls.js"></script>
+		<script src="lib/ocLazyLoad/ocLazyLoad.min.js"></script>
+		<script src="lib/bootstrapDatePicker/js/bootstrap-datepicker.min.js"></script>
+		<script src="lib/bootstrapDatePicker/locales/bootstrap-datepicker.zh-CN.min.js"></script>
+		<script src="lib/bootstrapDatetimePicker/js/bootstrap-datetimepicker.min.js"></script>
+		<script src="lib/bootstrapDatetimePicker/locales/bootstrap-datetimepicker.zh-CN.js"></script>
+		<script src="lib/angularuiSwitch/js/angular-ui-switch.min.js"></script>
+		<script src="lib/angularuiSelect/js/select.min.js"></script>
+		<script src="lib/chart/js/Chart.min.js"></script>
+		<script src="lib/angularChart/js/angular-chart.min.js"></script>
+		<script src="lib/ngFileUpload/js/ng-file-upload-shim.js"></script>
+		<script src="lib/ngFileUpload/js/ng-file-upload.min.js"></script>
+		<script type="text/javascript" src="lib/ueditor/ueditor.config.js"></script>
+		<script type="text/javascript" src="lib/ueditor/ueditor.all.js"></script>
+		<script type="text/javascript" src="lib/ueditor/lang/zh-cn/zh-cn.js"></script>
+		<script type="text/javascript" src="lib/angularUeditor/js/angular-ueditor.js"></script>
+		
+		<!--all custom directive -->
+		<script src="module/common/base/base.js"></script>
+		<script src="module/common/directive/navView/navView.js"></script>
+		<script src="module/common/directive/modal/modal.js"></script>
+		<script src="module/common/directive/pagination/pagination.js"></script>
+		<script src="module/common/directive/dataView/dataView.js"></script>
+		<script src="module/common/directive/datePicker/datePicker.js"></script>
+		<script src="module/common/directive/datetimePicker/datetimePicker.js"></script>
+		<script src="module/common/directive/tree/tree.js"></script>
+		
+		<script src="js/app.js"></script>
+		
+		<!--all state -->
+		<script src="module/main/js/mainState.js"></script>
+		<script src="module/user/js/userState.js"></script>
+		<script src="module/role/js/roleState.js"></script>
+		<script src="module/system/js/systemState.js"></script>
+		<script src="module/menu/js/menuState.js"></script>
+		
+		<script src="module/demo/js/demoState.js"></script>
+		
+		
+		
+	</body>
+
+</html>

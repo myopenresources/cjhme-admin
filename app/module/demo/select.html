@@ -1,0 +1,65 @@
+<div ng-controller="demo.selectCtrl">
+	<div class="c-body-box">
+		<p class="c-line-title"><i class="fa fa-file-text-o"></i> 使用说明</p>
+		<div class="row">
+			<div class="col-md-12">
+				<div class="col-md-12">
+					<p class="c-sub-line-title">描述：</p>
+					<section class="c-content-txt">
+						<code>
+						下拉框使用的是angularuiSelect，具体使用参考：<a href="https://github.com/angular-ui/ui-select/wiki/ui-select" target="_blank">angularuiSelect</a>
+						</code>
+					</section>
+
+					<p class="c-sub-line-title">使用：</p>
+					<section class="c-content-txt">
+						<pre>
+							<code>
+html部分
+参考示例
+
+JS部分
+//初始化
+$scope.typeList = [{
+	'id': '1',
+	'name': '普通用户'
+}, {
+	'id': '2',
+	'name': '高级用户'
+}];
+
+//选择
+$scope.selectType=function(){
+	$scope.type = {
+		'id': '2',
+		'name': '高级用户'
+	}
+}
+
+						   </code>
+						</pre>
+					</section>
+				</div>
+			</div>
+		</div>
+
+		<p class="c-line-title c-margin-t15"> <i class="fa fa-file-code-o"></i> 示例</p>
+		<div class="row">
+			<div class="col-md-12">
+				<div class="col-md-6">
+					<ui-select ng-model="type" ng-change="typeSelect();">
+						<ui-select-match placeholder="请选择类型">{{$select.selected.name}}</ui-select-match>
+						<ui-select-choices repeat="item in typeList">
+							<div ng-bind="item.name"></div>
+						</ui-select-choices>
+					</ui-select>
+				</div>
+
+				<div class="col-md-6">
+					<a class="btn btn-primary c-login-full-width" ng-click="selectType()">选择一个类型</a>
+				</div>
+			</div>
+		</div>
+
+	</div>
+</div>

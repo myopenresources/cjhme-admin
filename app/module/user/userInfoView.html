@@ -1,0 +1,323 @@
+<div ng-controller="user.userInfoViewCtrl">
+	<div class="c-body-box">
+		<form class="form-horizontal" role="form" method='post'>
+			<p class="c-line-title">帐号信息</p>
+
+			<div class="form-group">
+
+				<div class="col-md-6">
+					<div class="form-group">
+						<div class="col-md-12">
+							<label class="col-md-3 control-label"> 帐号：</label>
+							<div class="col-md-9">
+								<div class="form-control" ng-bind="formObj.userName"></div>
+							</div>
+						</div>
+					</div>
+					<div class="form-group">
+						<div class="col-md-12">
+							<label class="col-md-3 control-label">  密码：</label>
+							<div class="col-md-9">
+								<div class="form-control" ng-bind="formObj.password"></div>
+							</div>
+						</div>
+					</div>
+
+					<div class="form-group">
+						<div class="col-md-12">
+							<label class="col-md-3 control-label">  类型：</label>
+							<div class="col-md-9">
+								<div class="form-control" ng-bind="formObj.type"></div>
+							</div>
+						</div>
+					</div>
+					<div class="form-group">
+						<div class="col-md-12">
+							<label class="col-md-3 control-label">  状态：</label>
+							<div class="col-md-9">
+								<div class="form-control" ng-bind="formObj.state"></div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="col-md-6">
+					<div class="form-group">
+						<div class="col-md-offset-3 col-md-9">
+							<div class="pull-left">
+								<img src="http://127.0.0.1:8020/cjhme-admin/app/img/def-head.png" alt="" class="img-circle" style="width:170px;height:170px">
+							</div>
+							<div class="pull-left" style="margin-left: 30px;margin-top:15px">
+								<h4 class="text-danger">您可以在这里上传头像！</h4>
+								<h5>1.图片格式为png、jpeg、gif</h5>
+								<h5>2.允许的最大图片大小 200KB</h5>
+								<button type="button" class="btn btn-success" ngf-select="uploadImg($files)"><i class="fa fa-upload fa-fw"></i> 上传头像</button>
+							</div>
+
+						</div>
+					</div>
+				</div>
+
+			</div>
+
+			<p class="c-line-title">基本信息</p>
+			<div class="form-group">
+				<div class="col-md-6">
+					<label class="col-md-3 control-label"><span class="text-danger">*</span> 编号：</label>
+					<div class="col-md-9">
+						<div class="form-control" ng-bind="formObj.userNo"></div>
+					</div>
+				</div>
+
+				<div class="col-md-6">
+					<label class="col-md-3 control-label"><span class="text-danger">*</span> 姓名：</label>
+					<div class="col-md-9">
+						<div class="form-control" ng-bind="formObj.realName"></div>
+					</div>
+				</div>
+
+			</div>
+
+			<div class="form-group">
+				<div class="col-md-6">
+					<label class="col-md-3 control-label"><span class="text-danger">*</span> 性别：</label>
+					<div class="col-md-9">
+						<div class="form-control" ng-bind="formObj.sex"></div>
+					</div>
+				</div>
+				<div class="col-md-6">
+					<label class="col-md-3 control-label"><span class="text-danger">*</span> 籍贯：</label>
+					<div class="col-md-9">
+						<div class="form-control" ng-bind="formObj.nativePlace"></div>
+					</div>
+				</div>
+			</div>
+
+			<div class="form-group">
+				<div class="col-md-6">
+					<label class="col-md-3 control-label">出生年月：</label>
+					<div class="col-md-9">
+						<div class="form-control" ng-bind="formObj.birth"></div>
+					</div>
+				</div>
+				<div class="col-md-6">
+					<label class="col-md-3 control-label"> 身份证号：</label>
+					<div class="col-md-9">
+						<div class="form-control" ng-bind="formObj.idCard"></div>
+					</div>
+				</div>
+			</div>
+
+			<div class="form-group">
+				<div class="col-md-6">
+					<label class="col-md-3 control-label">户口地址：</label>
+					<div class="col-md-9">
+						<div class="form-control" ng-bind="formObj.registerAddr"></div>
+					</div>
+				</div>
+				<div class="col-md-6">
+					<label class="col-md-3 control-label"> 现居住址：</label>
+					<div class="col-md-9">
+						<div class="form-control" ng-bind="formObj.homeAddr"></div>
+					</div>
+				</div>
+			</div>
+
+			<div class="form-group">
+				<div class="col-md-6">
+					<label class="col-md-3 control-label">毕业院校：</label>
+					<div class="col-md-9">
+						<div class="form-control" ng-bind="formObj.school"></div>
+					</div>
+				</div>
+				<div class="col-md-6">
+					<label class="col-md-3 control-label">专业：</label>
+					<div class="col-md-9">
+						<div class="form-control" ng-bind="formObj.specialty"></div>
+					</div>
+				</div>
+			</div>
+
+			<div class="form-group">
+				<div class="col-md-6">
+					<label class="col-md-3 control-label">最高学历：</label>
+					<div class="col-md-9">
+						<div class="form-control" ng-bind="formObj.education"></div>
+					</div>
+				</div>
+				<div class="col-md-6">
+					<label class="col-md-3 control-label">婚姻状况：</label>
+					<div class="col-md-9">
+						<div class="form-control" ng-bind="formObj.maritalStatus"></div>
+					</div>
+				</div>
+			</div>
+
+			<div class="form-group">
+				<div class="col-md-6">
+					<label class="col-md-3 control-label"><span class="text-danger">*</span> 联系电话：</label>
+					<div class="col-md-9">
+						<div class="form-control" ng-bind="formObj.telephone"></div>
+					</div>
+				</div>
+				<div class="col-md-6">
+					<label class="col-md-3 control-label"><span class="text-danger">*</span> 邮箱：</label>
+					<div class="col-md-9">
+						<div class="form-control" ng-bind="formObj.email"></div>
+					</div>
+				</div>
+			</div>
+
+			<div class="form-group">
+
+				<div class="col-md-6">
+					<label class="col-md-3 control-label">备注：</label>
+					<div class="col-md-9">
+						<div class="form-control c-div-h90" ng-bind="formObj.describe"></div>
+					</div>
+				</div>
+			</div>
+
+			<p class="c-line-title">家庭成员</p>
+			<div class="form-group">
+				<div class="col-md-12">
+					<div class="col-md-12">
+						<table class="table table-bordered table-hover ">
+							<thead>
+								<tr>
+									<th class="text-center col-md-1">序号</th>
+									<th class="text-center col-md-1">姓名</th>
+									<th class="text-center col-md-1">关系</th>
+									<th class="text-center col-md-1">电话</th>
+									<th class="text-center col-md-1">备注</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr ng-if="formObj.familyMemberList && formObj.familyMemberList.length>0" ng-repeat="item in formObj.familyMemberList">
+									<td class="text-center" ng-bind="($index+1)"></td>
+									<td class="text-center" ng-bind="item.realName"></td>
+									<td class="text-center" ng-bind="item.relationship"></td>
+									<td class="text-center" ng-bind="item.telephone"></td>
+									<td class="text-center" ng-bind="item.describe"></td>
+								</tr>
+								<tr ng-if="!(formObj.familyMemberList && formObj.familyMemberList.length>0)">
+									<td colspan="8" class="text-center text-danger">
+										暂无数据...
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+
+			<p class="c-line-title">教育背景</p>
+			<div class="form-group">
+				<div class="col-md-12">
+					<div class="col-md-12">
+						<table class="table table-bordered table-hover ">
+							<thead>
+								<tr>
+									<th class="text-center col-md-1">序号</th>
+									<th class="text-center col-md-1">时间</th>
+									<th class="text-center col-md-1">院校</th>
+									<th class="text-center col-md-1">专业</th>
+									<th class="text-center col-md-1">备注</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr ng-if="formObj.educationalBgList && formObj.educationalBgList.length>0" ng-repeat="item in formObj.educationalBgList">
+									<td class="text-center" ng-bind="($index+1)"></td>
+									<td class="text-center" ng-bind="item.timeRange"></td>
+									<td class="text-center" ng-bind="item.school"></td>
+									<td class="text-center" ng-bind="item.specialty"></td>
+									<td class="text-center" ng-bind="item.describe"></td>
+								</tr>
+								<tr ng-if="!(formObj.educationalBgList && formObj.educationalBgList.length>0)">
+									<td colspan="8" class="text-center text-danger">
+										暂无数据...
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+
+			<p class="c-line-title">证书及奖惩</p>
+			<div class="form-group">
+				<div class="col-md-12">
+					<div class="col-md-12">
+						<table class="table table-bordered table-hover ">
+							<thead>
+								<tr>
+									<th class="text-center col-md-1">序号</th>
+									<th class="text-center col-md-1">时间</th>
+									<th class="text-center col-md-1">编号</th>
+									<th class="text-center col-md-1">名称</th>
+									<th class="text-center col-md-1">备注</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr ng-if="formObj.certificateAndRewardList && formObj.certificateAndRewardList.length>0" ng-repeat="item in formObj.certificateAndRewardList">
+									<td class="text-center" ng-bind="($index+1)"></td>
+									<td class="text-center" ng-bind="item.timeRange"></td>
+									<td class="text-center" ng-bind="item.serialNumber"></td>
+									<td class="text-center" ng-bind="item.name"></td>
+									<td class="text-center" ng-bind="item.describe"></td>
+								</tr>
+								<tr ng-if="!(formObj.certificateAndRewardList && formObj.certificateAndRewardList.length>0)">
+									<td colspan="8" class="text-center text-danger">
+										暂无数据...
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+
+			<p class="c-line-title">工作经验</p>
+			<div class="form-group">
+				<div class="col-md-12">
+					<div class="col-md-12">
+						<table class="table table-bordered table-hover ">
+							<thead>
+								<tr>
+									<th class="text-center col-md-1">序号</th>
+									<th class="text-center col-md-1">时间</th>
+									<th class="text-center col-md-1">公司</th>
+									<th class="text-center col-md-1">证明人</th>
+									<th class="text-center col-md-1">电话</th>
+									<th class="text-center col-md-1">备注</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr ng-if="formObj.workExperience && formObj.workExperience.length>0" ng-repeat="item in formObj.workExperience">
+									<td class="text-center" ng-bind="($index+1)"></td>
+									<td class="text-center" ng-bind="item.timeRange"></td>
+									<td class="text-center" ng-bind="item.companyName"></td>
+									<td class="text-center" ng-bind="item.witness"></td>
+									<td class="text-center" ng-bind="item.telephone"></td>
+									<td class="text-center" ng-bind="item.describe"></td>
+								</tr>
+								<tr ng-if="!(formObj.workExperience && formObj.workExperience.length>0)">
+									<td colspan="8" class="text-center text-danger">
+										暂无数据...
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col-md-offset-1 col-md-10">
+					<button type="button" class="btn btn-success" ng-click="back();"><i class="fa fa-backward fa-fw"></i> 返回</button>
+				</div>
+			</div>
+
+		</form>
+	</div>
+</div>

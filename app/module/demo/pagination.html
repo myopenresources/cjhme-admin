@@ -1,0 +1,116 @@
+<div ng-controller="demo.paginationCtrl">
+	<div class="c-body-box">
+		<p class="c-line-title"><i class="fa fa-file-text-o"></i> 使用说明</p>
+		<div class="row">
+			<div class="col-md-12">
+				<div class="col-md-12">
+					<p class="c-sub-line-title">描述：</p>
+					<section class="c-content-txt">
+						<code>
+						提供最基本的分页功能，如上一页、下一页、第一页、最后一页与刷新。
+						</code>
+					</section>
+
+					<p class="c-sub-line-title">使用：</p>
+					<section class="c-content-txt">
+						<pre>
+							<code>
+html部分
+参考示例
+
+
+JS部分
+
+//分页配置
+$scope.pagerConfig = {
+	total: 30, //总条数
+	pageList: [15, 25, 35] //每页显示条数
+}
+
+//分页改变事件
+$scope.pagerChange = function(type, pageParam) {
+	console.info(type); //类型，分别为：fristPage(第一页)、previousPage(上一页)、refresh(刷)、nextPage(下一页)、lastPage(最后一页)
+	console.info(pageParam); //参数，分别为：pageNumber(当前页)、pageSize(当前页条数)、pageTotal(总页数)、total(总条数)
+
+}
+							</code>
+						</pre>
+					</section>
+					
+					<p class="c-sub-line-title">API说明：</p>
+					<section class="c-content-txt">
+						<table class="table table-bordered table-hover">
+							<thead>
+								<tr>
+									<th class="text-left col-md-2">参数</th>
+									<th class="text-left col-md-2">默认值</th>
+									<th class="text-left col-md-8">说明</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td class="text-left">
+										setOptions
+									</td>
+									<td class="text-left">
+										
+									</td>
+									<td class="text-left">
+										设置配置
+									</td>
+								</tr>
+								<tr>
+									<td class="text-left">
+										setOptions.total
+									</td>
+									<td class="text-left">
+										0
+									</td>
+									<td class="text-left">
+										总条数
+									</td>
+								</tr>
+								<tr>
+									<td class="text-left">
+										setOptions.pageList
+									</td>
+									<td class="text-left">
+										[10, 20, 30, 50, 100, 150, 200]
+									</td>
+									<td class="text-left">
+										每页条数
+									</td>
+								</tr>
+								<tr>
+									<td class="text-left">
+										onPageChanged
+									</td>
+									<td class="text-left">
+										
+									</td>
+									<td class="text-left">
+										分页改变事件，事件传入type, pageParam两个参数，
+										type，分别为：fristPage(第一页)、previousPage(上一页)、refresh(刷)、nextPage(下一页)、lastPage(最后一页)等值，
+										pageParam，分别为：pageNumber(当前页)、pageSize(当前页条数)、pageTotal(总页数)、total(总条数)等参数。
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</section>
+
+				</div>
+			</div>
+		</div>
+
+		<p class="c-line-title c-margin-t15"> <i class="fa fa-file-code-o"></i> 示例</p>
+		<div class="row">
+			<div class="col-md-12">
+				<div class="col-md-12">
+					<div cjhme-pagination setOptions="pagerConfig" onPageChanged="pagerChange"></div>
+				</div>
+			</div>
+		</div>
+
+	</div>
+
+</div>

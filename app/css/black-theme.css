@@ -1,0 +1,19 @@
+.c-wrapper .left-wrapper {
+	background-color: #25313f;
+}
+
+.c-l-header {
+	background-color: #3a4552;
+}
+
+.c-l-header .c-brand-logo> img {
+	background-color: #1c2530;
+}
+
+.c-l-header .c-nav {
+	border-right: 1px solid #25313f;
+}
+
+.c-load-modal-bg .c-load-modal {
+	color: #1c2530;
+}

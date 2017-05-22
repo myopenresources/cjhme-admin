@@ -1,0 +1,16 @@
+<div>
+	<table class="{{options.tableCls}}">
+		<thead>
+			<tr>
+				<th ng-if="options.serialNumber" class="col-md-1">#</th>
+				<th ng-repeat="header in options.columns" class="{{header.headerCls}}" ng-bind="header.title"></th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr><td class="text-center text-danger" colspan="{{options.columns.length+1}}" ng-bind="options.dataEmptyMsg"></td></tr>
+		</tbody>
+	</table>
+	<div ng-if="options.pagination">
+		<div cjhme-pagination   setOptions="paginationConfig" onPageChanged="paginationChange"></div>
+	</div>
+</div>

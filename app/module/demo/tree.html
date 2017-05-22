@@ -1,0 +1,547 @@
+<div ng-controller="demo.treeCtrl">
+	<div class="c-body-box">
+
+		<p class="c-line-title"><i class="fa fa-file-text-o"></i> 树使用说明</p>
+		<div class="row">
+			<div class="col-md-12">
+				<div class="col-md-12">
+					<p class="c-sub-line-title">描述：</p>
+					<section class="c-content-txt">
+						<code>
+						  树提供了大部分树中常用的功能。
+						</code>
+					</section>
+					<p class="c-sub-line-title">API说明：</p>
+					<section class="c-content-txt">
+						<table class="table table-bordered table-hover">
+							<thead>
+								<tr>
+									<th class="text-left col-md-2">参数</th>
+									<th class="text-left col-md-2">默认值</th>
+									<th class="text-left col-md-8">说明</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td class="text-left">
+										tree-data
+									</td>
+									<td class="text-left">
+
+									</td>
+									<td class="text-left">
+										标签中的数据属性，当URL存在时tree-data中的值无效，二者只要选择一种，即通过tree-data直接设置值或使用URL从后台获取，URL获得方式级别大于tree-data方式
+									</td>
+								</tr>
+								<tr>
+									<td class="text-left">
+										options
+									</td>
+									<td class="text-left">
+
+									</td>
+									<td class="text-left">
+										标签中的参数属性
+									</td>
+								</tr>
+								<tr>
+									<td class="text-left">
+										options.url
+									</td>
+									<td class="text-left">
+										空
+									</td>
+									<td class="text-left">
+										AJAX请求后台服务器地址，当URL存在时tree-data中的值无效，二者只要选择一种，即通过tree-data直接设置值或使用URL从后台获取，URL获得方式级别大于tree-data方式
+									</td>
+								</tr>
+								<tr>
+									<td class="text-left">
+										options.method
+									</td>
+									<td class="text-left">
+										POST
+									</td>
+									<td class="text-left">
+										AJAX请求类型，使用tree-data设置数据时无效
+									</td>
+								</tr>
+								<tr>
+									<td class="text-left">
+										options.params
+									</td>
+									<td class="text-left">
+										空
+									</td>
+									<td class="text-left">
+										AJAX请求参数，使用tree-data设置数据时无效
+									</td>
+								</tr>
+								<tr>
+									<td class="text-left">
+										options.asyncTree
+									</td>
+									<td class="text-left">
+										false
+									</td>
+									<td class="text-left">
+										异步树，使用tree-data设置数据时无效
+									</td>
+								</tr>
+								<tr>
+									<td class="text-left">
+										options.canChecked
+									</td>
+									<td class="text-left">
+										false
+									</td>
+									<td class="text-left">
+										使用选择框
+									</td>
+								</tr>
+								<tr>
+									<td class="text-left">
+										options.cascadeChecked
+									</td>
+									<td class="text-left">
+										false
+									</td>
+									<td class="text-left">
+										级联选择
+									</td>
+								</tr>
+								<tr>
+									<td class="text-left">
+										options.singleChecked
+									</td>
+									<td class="text-left">
+										false
+									</td>
+									<td class="text-left">
+										单选，canChecked为true时有效果
+									</td>
+								</tr>
+								<tr>
+									<td class="text-left">
+										options.hideParentCheckBox
+									</td>
+									<td class="text-left">
+										false
+									</td>
+									<td class="text-left">
+										隐藏父选择框，canChecked为true时有效果
+									</td>
+								</tr>
+								<tr>
+									<td class="text-left">
+										options.singleCheckedNodeId
+									</td>
+									<td class="text-left">
+										空
+									</td>
+									<td class="text-left">
+										单选，根据id节点选择节点，singleChecked与canChecked为true时有效果
+									</td>
+								</tr>
+								<tr>
+									<td class="text-left">
+										options.animatedCls
+									</td>
+									<td class="text-left">
+										空
+									</td>
+									<td class="text-left">
+										动画样式
+									</td>
+								</tr>
+								<tr>
+									<td class="text-left">
+										options.onCheckboxChanged
+									</td>
+									<td class="text-left">
+										function(node,$event){}
+									</td>
+									<td class="text-left">
+										选择框改变事件
+									</td>
+								</tr>
+								<tr>
+									<td class="text-left">
+										options.onNodeClicked
+									</td>
+									<td class="text-left">
+										function(node,$event){}
+									</td>
+									<td class="text-left">
+										节点单击事件
+									</td>
+								</tr>
+								<tr>
+									<td class="text-left">
+										instance
+									</td>
+									<td class="text-left">
+
+									</td>
+									<td class="text-left">
+										标签中的实例属性
+									</td>
+								</tr>
+								<tr>
+									<td class="text-left">
+										instance.getCheckedData
+									</td>
+									<td class="text-left">
+
+									</td>
+									<td class="text-left">
+										获得所有数据
+									</td>
+								</tr>
+								<tr>
+									<td class="text-left">
+										instance.getAllData
+									</td>
+									<td class="text-left">
+
+									</td>
+									<td class="text-left">
+										获得选中的数据
+									</td>
+								</tr>
+								<tr>
+									<td class="text-left">
+										instance.setCheckedNodeById
+									</td>
+									<td class="text-left">
+
+									</td>
+									<td class="text-left">
+										根据id选择一个节点
+									</td>
+								</tr>
+								<tr>
+									<td class="text-left">
+										instance.setCheckedNodeByIds
+									</td>
+									<td class="text-left">
+
+									</td>
+									<td class="text-left">
+										根据ids选择节点
+									</td>
+								</tr>
+								<tr>
+									<td class="text-left">
+										instance.checkedAllByState
+									</td>
+									<td class="text-left">
+
+									</td>
+									<td class="text-left">
+										根据状态选中节点
+									</td>
+								</tr>
+						</table>
+					</section>
+				</div>
+			</div>
+		</div>
+
+		<p class="c-line-title c-margin-t15"> <i class="fa fa-file-code-o"></i> 树示例(打开控制台查看数据)</p>
+		<div class="row">
+			<div class="col-md-12">
+				<div class="col-md-12">
+					<cjhme-tree tree-data="tData" options="options" instance="instance"></cjhme-tree>
+					<a class="btn btn-primary c-login-full-width" ng-click="getCheckedData()">获得选中的数据</a>
+					<a class="btn btn-primary c-login-full-width" ng-click="getAllData()">获得所有数据</a>
+					<a class="btn btn-primary c-login-full-width" ng-click="checkedNode()">选择一个节点</a>
+				</div>
+			</div>
+		</div>
+
+		<p class="c-line-title" style="margin-top: 30px;"><i class="fa fa-file-text-o"></i> 下拉树使用说明</p>
+		<div class="row">
+			<div class="col-md-12">
+				<div class="col-md-12">
+					<p class="c-sub-line-title">描述：</p>
+					<section class="c-content-txt">
+						<code>
+						  下接树提供了常用的功能。
+						</code>
+					</section>
+					<p class="c-sub-line-title">API说明：</p>
+					<section class="c-content-txt">
+						<table class="table table-bordered table-hover">
+							<thead>
+								<tr>
+									<th class="text-left col-md-2">参数</th>
+									<th class="text-left col-md-2">默认值</th>
+									<th class="text-left col-md-8">说明</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td class="text-left">
+										tree-data
+									</td>
+									<td class="text-left">
+
+									</td>
+									<td class="text-left">
+										标签中的数据属性，当URL存在时tree-data中的值无效，二者只要选择一种，即通过tree-data直接设置值或使用URL从后台获取，URL获得方式级别大于tree-data方式
+									</td>
+								</tr>
+								<tr>
+									<td class="text-left">
+										options
+									</td>
+									<td class="text-left">
+
+									</td>
+									<td class="text-left">
+										标签中的参数属性
+									</td>
+								</tr>
+								<tr>
+									<td class="text-left">
+										options.url
+									</td>
+									<td class="text-left">
+										空
+									</td>
+									<td class="text-left">
+										AJAX请求后台服务器地址，当URL存在时tree-data中的值无效，二者只要选择一种，即通过tree-data直接设置值或使用URL从后台获取，URL获得方式级别大于tree-data方式
+									</td>
+								</tr>
+								<tr>
+									<td class="text-left">
+										options.method
+									</td>
+									<td class="text-left">
+										POST
+									</td>
+									<td class="text-left">
+										AJAX请求类型，使用tree-data设置数据时无效
+									</td>
+								</tr>
+								<tr>
+									<td class="text-left">
+										options.params
+									</td>
+									<td class="text-left">
+										空
+									</td>
+									<td class="text-left">
+										AJAX请求参数，使用tree-data设置数据时无效
+									</td>
+								</tr>
+								<tr>
+									<td class="text-left">
+										options.asyncTree
+									</td>
+									<td class="text-left">
+										false
+									</td>
+									<td class="text-left">
+										异步树，使用tree-data设置数据时无效
+									</td>
+								</tr>
+								<tr>
+									<td class="text-left">
+										options.canChecked
+									</td>
+									<td class="text-left">
+										false
+									</td>
+									<td class="text-left">
+										使用选择框
+									</td>
+								</tr>
+								<tr>
+									<td class="text-left">
+										options.cascadeChecked
+									</td>
+									<td class="text-left">
+										false
+									</td>
+									<td class="text-left">
+										级联选择
+									</td>
+								</tr>
+								<tr>
+									<td class="text-left">
+										options.singleChecked
+									</td>
+									<td class="text-left">
+										false
+									</td>
+									<td class="text-left">
+										单选，canChecked为true时有效果
+									</td>
+								</tr>
+								<tr>
+									<td class="text-left">
+										options.hideParentCheckBox
+									</td>
+									<td class="text-left">
+										false
+									</td>
+									<td class="text-left">
+										隐藏父选择框，canChecked为true时有效果
+									</td>
+								</tr>
+								<tr>
+									<td class="text-left">
+										options.singleCheckedNodeId
+									</td>
+									<td class="text-left">
+										空
+									</td>
+									<td class="text-left">
+										单选，根据id节点选择节点，singleChecked与canChecked为true时有效果
+									</td>
+								</tr>
+								<tr>
+									<td class="text-left">
+										options.animatedCls
+									</td>
+									<td class="text-left">
+										空
+									</td>
+									<td class="text-left">
+										动画样式
+									</td>
+								</tr>
+								<tr>
+									<td class="text-left">
+										options.direction
+									</td>
+									<td class="text-left">
+										true
+									</td>
+									<td class="text-left">
+										下拉框方向，true为下，false为上
+									</td>
+								</tr>
+								<tr>
+									<td class="text-left">
+										options.onCheckboxChanged
+									</td>
+									<td class="text-left">
+										function(node,$event){}
+									</td>
+									<td class="text-left">
+										选择框改变事件
+									</td>
+								</tr>
+								<tr>
+									<td class="text-left">
+										options.onNodeClicked
+									</td>
+									<td class="text-left">
+										function(node,$event){}
+									</td>
+									<td class="text-left">
+										节点单击事件
+									</td>
+								</tr>
+								<tr>
+									<td class="text-left">
+										options.onOk
+									</td>
+									<td class="text-left">
+										function(data){}
+									</td>
+									<td class="text-left">
+										确认按钮事件
+									</td>
+								</tr>
+								<tr>
+									<td class="text-left">
+										options.onClose
+									</td>
+									<td class="text-left">
+										function(){}
+									</td>
+									<td class="text-left">
+										关闭按钮事件
+									</td>
+								</tr>
+								<tr>
+									<td class="text-left">
+										placeholder
+									</td>
+									<td class="text-left">
+
+									</td>
+									<td class="text-left">
+										文件框的placeholder
+									</td>
+								</tr>
+								<tr>
+									<td class="text-left">
+										boxWidth
+									</td>
+									<td class="text-left">
+
+									</td>
+									<td class="text-left">
+										下拉框的宽度
+									</td>
+								</tr>
+								<tr>
+									<td class="text-left">
+										boxHeight
+									</td>
+									<td class="text-left">
+
+									</td>
+									<td class="text-left">
+										下拉框的高度
+									</td>
+								</tr>
+								<tr>
+									<td class="text-left">
+										instance
+									</td>
+									<td class="text-left">
+
+									</td>
+									<td class="text-left">
+										标签中的实例属性
+									</td>
+								</tr>
+								
+								<tr>
+									<td class="text-left">
+										instance.setVal
+									</td>
+									<td class="text-left">
+
+									</td>
+									<td class="text-left">
+										设置值，多个值用逗号间隔
+									</td>
+								</tr>
+						</table>
+					</section>
+				</div>
+			</div>
+		</div>
+
+		<p class="c-line-title c-margin-t15"> <i class="fa fa-file-code-o"></i> 下拉树示例(打开控制台查看数据)</p>
+		<div class="row">
+			<div class="col-md-12">
+				<div class="col-md-6">
+					<cjhme-select-tree tree-data="treeData" options="treeOptions" placeholder="请选择..." ng-model="myDropdownTree " box-width="300" box-height="300" instance="dInstance"></cjhme-select-tree>
+				</div>
+				<div class="col-md-6">
+					<a class="btn btn-primary c-login-full-width" ng-click="setVal()">设置值</a>
+				</div>
+			</div>
+		</div>
+
+	</div>
+
+</div>

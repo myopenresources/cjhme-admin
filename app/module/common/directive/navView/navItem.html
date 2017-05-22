@@ -1,0 +1,6 @@
+<i ng-click="itemExpended(item, $event);" class="c-icon fa" ng-class="{'fa-chevron-circle-down': !isLeaf(item) && item.isExpend, 'fa-chevron-circle-right': !isLeaf(item) &&!item.isExpend}" style="width:10px"></i>
+<span class='c-text-field' ng-click="warpCallback('itemClicked', item, $event);"><i class="fa {{item.icon}}" style="color:{{item.color}}"></i> <span>{{item.name}}</span></span>
+<ul ng-if="!isLeaf(item)" ng-show="item.isExpend" class="animated fadeIn">
+	<li ng-repeat="item in item.children" ng-include="templateUrl()">
+	</li>
+</ul>

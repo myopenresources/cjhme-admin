@@ -1,0 +1,51 @@
+<div class="text-right" style="padding-right:10px;padding-top: 6px;">
+	<i class="fa fa-close" aria-hidden="true" style="font-size: 15px;cursor: pointer;color:#666" ng-click="cancel()"></i>
+</div>
+<div class="modal-body" style="padding-top:8px">
+	<div ng-switch="mode">
+		<p class="text-center text-danger" ng-switch-when="error">
+			<span class="fa-stack fa-5x" aria-hidden="true">
+				<i class="fa fa-times-circle-o fa-stack-2x"></i>
+			</span>
+		</p>
+		<p class="text-center text-warning" ng-switch-when="warning">
+			<span class="fa-stack fa-4x" aria-hidden="true">
+				<i class="fa fa-warning fa-stack-2x"></i>
+			</span>
+		</p>
+		<p class="text-center text-info" ng-switch-when="info">
+			<span class="fa-stack fa-5x" aria-hidden="true">
+				<i class="fa fa-circle-o fa-stack-2x"></i>
+				<i class="fa fa-info fa-stack-1x"></i>
+			</span>
+		</p>
+		<p class="text-center text-primary" ng-switch-when="confirm">
+			<span class="fa-stack fa-5x" aria-hidden="true">
+				<i class="fa fa-circle-o fa-stack-2x"></i>
+				<i class="fa fa-question fa-stack-1x"></i>
+			</span>
+		</p>
+	</div>
+	<p class="h5 text-center" style="font-weight: bold;" ng-bind="title"></p>
+	<p class="text-mute text-center" ><span ng-bind-html="content | cjhmeSanitize"></span>
+		<a href="" ng-if="extra.detail" ng-click="detail()" class="text-info" style="text-decoration:none;">
+			&nbsp;{{showDetail ? '隐藏详细&lt;&lt;':'查看详情&gt;&gt;'}}
+		</a>
+	</p>
+	<div ng-show="showDetail" >
+		<hr />
+		<p ng-bind="extra.detail" class="text-info">
+		</p>
+		<hr />
+	</div>
+
+	<div class="text-center">
+		<div ng-if="!extra.autoClose">
+			<a class="btn btn-primary" ng-click="ok()">确定</a>
+		    <a class="btn btn-default" style="margin-left:15px" ng-click="cancel()" ng-show="mode=='confirm'">取消</a>
+		</div>
+		<div ng-if="extra.autoClose">
+			<span class="text-danger">（{{(extra.autoCloseTime/1000)+1}}秒自动关闭）</span>
+		</div>
+	</div>
+</div>

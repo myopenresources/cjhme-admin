@@ -1,0 +1,44 @@
+<div ng-controller="demo.switchCtrl">
+	<div class="c-body-box">
+		<p class="c-line-title"><i class="fa fa-file-text-o"></i> 使用说明</p>
+		<div class="row">
+			<div class="col-md-12">
+				<div class="col-md-12">
+					<p class="c-sub-line-title">描述：</p>
+					<section class="c-content-txt">
+						<code>
+						数据分页器是根据分页指令进行二次封装的指令，数据分页器只负责数据的分页与数据获取处理，具体的数据展示可根据自己的要求进行展示，
+						可以大大提高了数据展示的灵活性，对于复杂的数据展示是很在用处的。
+						</code>
+					</section>
+
+					<p class="c-sub-line-title">使用：</p>
+					<section class="c-content-txt">
+						<pre>
+							<code>
+html部分
+参考示例
+
+JS部分
+$scope.switchChange = function(val) {
+		console.info(val)
+}
+						   </code>
+						</pre>
+					</section>
+				</div>
+			</div>
+		</div>
+
+		<p class="c-line-title c-margin-t15"> <i class="fa fa-file-code-o"></i> 示例</p>
+		<div class="row">
+			<div class="col-md-12">
+				<div class="col-md-12">
+					<switch name="enabled" style="width:66px" ng-model="enabled" disabled="false" ng-change="switchChange(enabled)" on="开始" off="结束"></switch>
+					<switch name="enabled" style="width:155px" ng-model="enabled" disabled="false" ng-change="switchChange(enabled)" on="这边是开始的意思" off="这边是结束的意思"></switch>
+				</div>
+			</div>
+		</div>
+
+	</div>
+</div>

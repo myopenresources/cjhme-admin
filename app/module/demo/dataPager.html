@@ -1,0 +1,342 @@
+<div ng-controller="demo.dataPagerCtrl">
+	<div class="c-body-box">
+		<p class="c-line-title"><i class="fa fa-file-text-o"></i> 使用说明</p>
+		<div class="row">
+			<div class="col-md-12">
+				<div class="col-md-12">
+					<p class="c-sub-line-title">描述：</p>
+					<section class="c-content-txt">
+						<code>
+						数据分页器是根据分页指令进行二次封装的指令，数据分页器只负责数据的分页与数据获取处理，具体的数据展示可根据自己的要求进行展示，
+						可以大大提高了数据展示的灵活性，对于复杂的数据展示是很在用处的。
+						</code>
+					</section>
+
+					<p class="c-sub-line-title">使用：</p>
+					<section class="c-content-txt">
+						<pre>
+							<code>
+html部分
+参考示例
+
+JS部分
+//配置
+$scope.dataPagerConfig = {
+	pageList: [10, 15,30], //分页条数列表
+	data: [{
+		"num": "10001",
+		"name": "钱一",
+		"age": 16,
+		"salary": 25355656,
+		"phone": "18950950213",
+		"createTime": "2016-02-25 20:25:12"
+	}, {
+		"num": "10002",
+		"name": "王二",
+		"age": 32,
+		"salary": 525355656,
+		"phone": "18950950213",
+		"createTime": "2016-02-25 20:25:12"
+	}, {
+		"num": "10003",
+		"name": "张三",
+		"age": 25,
+		"salary": 255355656,
+		"phone": "18358013642",
+		"createTime": "2016-02-25 20:25:12"
+	}, {
+		"num": "10004",
+		"name": "李四",
+		"age": 20,
+		"salary": 253556,
+		"phone": "18558013565",
+		"createTime": "2016-02-25 20:25:12"
+	}, {
+		"num": "10005",
+		"name": "王五",
+		"age": 30,
+		"salary": 55656,
+		"phone": "18958013552",
+		"createTime": "2016-02-25 20:25:12"
+	}, {
+		"num": "10006",
+		"name": "赵六",
+		"age": 32,
+		"salary": 5656,
+		"phone": "18958015327",
+		"createTime": "2016-02-25 20:25:12"
+	}, {
+		"num": "10007",
+		"name": "马七",
+		"age": 37,
+		"salary": 25355656000,
+		"phone": "18958035552",
+		"createTime": "2016-02-25 20:25:12"
+	}, {
+		"num": "10008",
+		"name": "刘八",
+		"age": 60,
+		"salary": 56,
+		"phone": "13558606352",
+		"createTime": "2016-02-25 20:25:12"
+	}, {
+		"num": "10009",
+		"name": "孙九",
+		"age": 26,
+		"salary": 85655656,
+		"phone": "18695815352",
+		"createTime": "2016-02-25 20:25:12"
+	}, {
+		"num": "10010",
+		"name": "周十",
+		"age": 40,
+		"salary": 6,
+		"phone": "15662561352",
+		"createTime": "2016-02-25 20:25:12"
+	}, {
+		"num": "10011",
+		"name": "陈年",
+		"age": 30,
+		"salary": 0,
+		"phone": "17655013552",
+		"createTime": "2016-02-25 20:25:12"
+	}, {
+		"num": "10012",
+		"name": "林杰",
+		"age": 50,
+		"salary": 10,
+		"phone": "18980153522",
+		"createTime": "2016-02-25 20:25:12"
+	}, {
+		"num": "10013",
+		"name": "张明",
+		"age": 10,
+		"salary": 0,
+		"phone": "16958013522",
+		"createTime": "2016-02-25 20:25:12"
+	}, {
+		"num": "10014",
+		"name": "许丽",
+		"age": 25,
+		"salary": 100,
+		"phone": "18958013524",
+		"createTime": "2016-02-25 20:25:12"
+	}, {
+		"num": "10015",
+		"name": "上官丹凤",
+		"age": 30,
+		"salary": 3660,
+		"phone": "18958301352",
+		"createTime": "2016-02-25 20:25:12"
+	}]
+}
+
+//接收函数pageNumber(当前页)、pageSize(当前页条数)、dataList(数据列表)
+$scope.dataPagerReceive = function(pageNumber, pageSize, dataList) {
+   $scope.list = dataList;
+}
+
+//查询
+$scope.search = function() {
+	console.info("search");
+	$scope.dataPagerSearch({//查询
+		'data': '1'
+	});
+}
+							</code>
+						</pre>
+					</section>
+
+					<p class="c-sub-line-title">API说明：</p>
+					<section class="c-content-txt">
+						<table class="table table-bordered table-hover">
+							<thead>
+								<tr>
+									<th class="text-left col-md-2">参数</th>
+									<th class="text-left col-md-2">默认值</th>
+									<th class="text-left col-md-8">说明</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td class="text-left">
+										options
+									</td>
+									<td class="text-left">
+										
+									</td>
+									<td class="text-left">
+										配置属性
+									</td>
+								</tr>
+								<tr>
+									<td class="text-left">
+										options.url
+									</td>
+									<td class="text-left">
+										空
+									</td>
+									<td class="text-left">
+										服务器端请求地址
+									</td>
+								</tr>
+								<tr>
+									<td class="text-left">
+										options.sort
+									</td>
+									<td class="text-left">
+										空
+									</td>
+									<td class="text-left">
+									      服务器端排序参数
+									</td>
+								</tr>
+								<tr>
+									<td class="text-left">
+										options.method
+									</td>
+									<td class="text-left">
+										POST
+									</td>
+									<td class="text-left">
+									      服务器端请求方式
+									</td>
+								</tr>
+								<tr>
+									<td class="text-left">
+										options.param
+									</td>
+									<td class="text-left">
+										{}
+									</td>
+									<td class="text-left">
+									      服务器端请求参数
+									</td>
+								</tr>
+								<tr>
+									<td class="text-left">
+										options.pagination
+									</td>
+									<td class="text-left">
+										true
+									</td>
+									<td class="text-left">
+									      是否分页
+									</td>
+								</tr>
+								<tr>
+									<td class="text-left">
+										options.pageList
+									</td>
+									<td class="text-left">
+										[10, 20, 30, 50, 100, 150, 200]
+									</td>
+									<td class="text-left">
+									     分页中每页显示条数
+									</td>
+								</tr>
+								<tr>
+									<td class="text-left">
+										options.data
+									</td>
+									<td class="text-left">
+										[]
+									</td>
+									<td class="text-left">
+									     数据，当url不存在时，使用data中的数据
+									</td>
+								</tr>
+								<tr>
+									<td class="text-left">
+										receive
+									</td>
+									<td class="text-left">
+										
+									</td>
+									<td class="text-left">
+									     数据接收函数
+									</td>
+								</tr>
+								<tr>
+									<td class="text-left">
+										search
+									</td>
+									<td class="text-left">
+										
+									</td>
+									<td class="text-left">
+									    服务器端查询函数
+									</td>
+								</tr>
+								
+								
+							</tbody>
+						</table>
+					</section>
+				</div>
+			</div>
+		</div>
+
+		<p class="c-line-title c-margin-t15"> <i class="fa fa-file-code-o"></i> 示例</p>
+		<div class="row">
+			<div class="col-md-12">
+				<div class="col-md-12">
+
+					<div class="c-search-box">
+						<form class="form-horizontal" role="form" method='post'>
+
+							<div class="row">
+								<div class="col-md-4">
+									<label class="col-md-3 control-label">用户名：</label>
+									<div class="col-md-9">
+										<input type="email" class="form-control">
+									</div>
+								</div>
+								<div class="col-md-4">
+									<label class="col-md-3 control-label">姓名：</label>
+									<div class="col-md-9">
+										<input type="email" class="form-control">
+									</div>
+								</div>
+								<div class="col-md-4">
+									<button type="button" class="btn btn-primary" ng-click="search();"><i class="fa fa-search fa-fw"></i> 查询</button>
+								</div>
+							</div>
+
+						</form>
+					</div>
+					<table class="table table-bordered table-hover">
+						<thead>
+							<tr>
+								<th class="text-center">编号</th>
+								<th class="text-center">姓名</th>
+								<th class="text-center">年龄</th>
+								<th class="text-center">工资</th>
+								<th class="text-center">电话</th>
+								<th class="text-center">创建时间</th>
+								<th class="text-center">操作</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr ng-repeat="item in list">
+								<td class="text-center" ng-bind="item.num"></td>
+								<td class="text-center" ng-bind="item.name"></td>
+								<td class="text-center" ng-bind="item.age"></td>
+								<td class="text-center" ng-bind="item.salary"></td>
+								<td class="text-center" ng-bind="item.phone"></td>
+								<td class="text-center" ng-bind="item.createTime"></td>
+								<td class="text-center">
+									<button class="btn  btn-info btn-sm">查看</button>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+
+					<div cjhme-data-pager options="dataPagerConfig" receive="dataPagerReceive" search="dataPagerSearch"></div>
+
+				</div>
+			</div>
+		</div>
+
+	</div>
+</div>

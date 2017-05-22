@@ -1,0 +1,159 @@
+<div ng-controller="demo.modalCtrl">
+	<div class="c-body-box">
+		<p class="c-line-title"><i class="fa fa-file-text-o"></i> 使用说明</p>
+		<div class="row">
+			<div class="col-md-12">
+				<div class="col-md-12">
+					<p class="c-sub-line-title">描述：</p>
+					<section class="c-content-txt">
+						<code>
+						模态框分为：确认框、警告框、消息框、错误框、自动关闭消息框、自动关闭警告框、自动关闭错误框，其中自动关闭是将属性autoClose设置为true。
+						</code>
+					</section>
+
+					<p class="c-sub-line-title">确认框(confirm)：</p>
+					<section class="c-content-txt">
+						<pre class="text-left">
+						<code>
+cjhmeModal.confirm({
+	title: '请确认',           //标题
+	content: '您确定？',       //内容
+	detail: '这里的详细内容！',  //详细内容
+	ok: function() {         //确认按钮回调函数
+		console.info("确认框 ok")
+	},
+	cancel: function() {    //取消按钮回调函数
+		console.info("确认框 cancel")
+	}
+});
+						</code>
+						</pre>
+					</section>
+
+					<p class="c-sub-line-title">警告框(warning)：</p>
+					<section class="c-content-txt">
+						<pre class="text-left">
+						<code>
+cjhmeModal.warning({
+	title: '警告框',           //标题
+	content: '这是一个警告',    //内容
+	ok: function() {         //确认按钮回调函数
+		console.info("警告框 ok")
+	}
+});
+						</code>
+						</pre>
+					</section>
+
+					<p class="c-sub-line-title">警告框(warning)：</p>
+					<section class="c-content-txt">
+						<pre class="text-left">
+						<code>
+cjhmeModal.warning({
+	title: '警告框',           //标题
+	content: '这是一个警告',    //内容
+	ok: function() {         //确认按钮回调函数
+		console.info("警告框 ok")
+	}
+});
+						</code>
+						</pre>
+					</section>
+
+					<p class="c-sub-line-title">消息框(info)：</p>
+					<section class="c-content-txt">
+						<pre class="text-left">
+						<code>
+cjhmeModal.info({
+	title: '消息框',
+	content: '这是一个消息',
+	ok: function() {
+		console.info("消息框 ok")
+	}
+});
+						</code>
+						</pre>
+					</section>
+
+					<p class="c-sub-line-title">错误框(error)：</p>
+					<section class="c-content-txt">
+						<pre class="text-left">
+						<code>
+cjhmeModal.error({
+	title: '错误框',
+	content: '这是一个错误框',
+	ok: function() {
+		console.info("错误框 ok")
+	}
+});
+						</code>
+						</pre>
+					</section>
+
+					<p class="c-sub-line-title">自动关闭消息框(info)：</p>
+					<section class="c-content-txt">
+						<pre class="text-left">
+						<code>
+cjhmeModal.info({
+	title: '自动关闭消息框',         //标题
+	content: '这是一个自动关闭消息',  //内容
+	autoClose: true              //是否自动关闭,值为true和false
+});
+						</code>
+						</pre>
+					</section>
+
+					<p class="c-sub-line-title">自定义框：</p>
+					<section class="c-content-txt">
+						<pre class="text-left">
+						<code>
+cjhmeModal.customModal({
+	templateUrl: "modalContent.html", //模版
+	scope: $scope,                    //$scope
+	size: 'md',                       //窗口大不
+	controller: ['$scope', '$uibModalInstance', function($scope, $uibModalInstance) { //控制器
+		$scope.ok=function(){   //控制器内部函数
+			$scope.$dismiss();
+		}
+	}]
+});
+						</code>
+						</pre>
+					</section>
+
+				</div>
+			</div>
+		</div>
+
+		<p class="c-line-title c-margin-t15"> <i class="fa fa-file-code-o"></i> 示例</p>
+		<div class="row">
+			<div class="col-md-12">
+				<div class="col-md-12">
+					<button type="button" class="btn btn-default btn-sm" ng-click="openConfirm();">确认框</button>
+					<button type="button" class="btn btn-warning btn-sm" ng-click="openWarning();">警告框</button>
+					<button type="button" class="btn btn-info btn-sm" ng-click="openInfo();">消息框</button>
+					<button type="button" class="btn btn-danger btn-sm" ng-click="openError();">错误框</button>
+
+					<button type="button" class="btn btn-info btn-sm" ng-click="openInfoAutoClose();">自动关闭消息框</button>
+					<button type="button" class="btn btn-warning btn-sm" ng-click="openWarningAutoClose();">自动关闭警告框</button>
+					<button type="button" class="btn btn-danger btn-sm" ng-click="openErrorAutoClose();">自动关闭错误框</button>
+
+					<button type="button" class="btn btn-default btn-sm" ng-click="openCustomModal();">自定义框</button>
+				</div>
+			</div>
+		</div>
+
+	</div>
+</div>
+
+<script type="text/ng-template" id="modalContent.html">
+	<div class="modal-header">
+		<h4 class="modal-title bold text-danger">自定义模态框</h4>
+	</div>
+	<div class="modal-body">
+		这里面有内容
+	</div>
+	<div class="modal-footer">
+		<a class="btn btn-primary" ng-click="ok()">确定</a>
+	</div>
+</script>

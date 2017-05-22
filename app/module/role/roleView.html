@@ -1,0 +1,50 @@
+<div ng-controller="role.roleViewCtrl">
+	<div class="c-body-box">
+		<form class="form-horizontal" role="form" method='post'>
+			<div class="form-group">
+				<div class="col-md-12">
+					<p class="c-line-title">角色信息</p>
+					<div class="form-group">
+						<div class="col-md-6">
+							<label class="col-md-3 control-label">帐号：</label>
+							<div class="col-md-9">
+								<div class="form-control" ng-bind="formObj.roleNo"></div>
+							</div>
+						</div>
+						<div class="col-md-6">
+							<label class="col-md-3 control-label">密码：</label>
+							<div class="col-md-9">
+								<div class="form-control" ng-bind="formObj.roleName"></div>
+							</div>
+						</div>
+					</div>
+
+					<div class="form-group">
+						<div class="col-md-6">
+							<label class="col-md-3 control-label">类型：</label>
+							<div class="col-md-9">
+								<div class="form-control" ng-bind="formObj.type"></div>
+							</div>
+						</div>
+						<div class="col-md-6">
+							<label class="col-md-3 control-label">状态：</label>
+							<div class="col-md-9">
+								<div class="form-control" ng-bind="formObj.state"></div>
+							</div>
+						</div>
+					</div>
+
+					<div class="row">
+						<div class="col-md-offset-1 col-md-10">
+							<button type="button" class="btn btn-primary" ng-click="edit();"><i class="fa fa-pencil fa-fw"></i> 编辑</button>
+							<button type="button" class="btn btn-danger" ng-click="delete();"><i class="fa fa-trash-o fa-fw"></i> 删除</button>
+							<button type="button" class="btn btn-success" ng-click="back();"><i class="fa fa-backward fa-fw"></i> 返回</button>
+						</div>
+					</div>
+					
+				</div>
+			</div>
+
+		</form>
+	</div>
+</div>

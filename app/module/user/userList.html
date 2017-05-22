@@ -1,0 +1,57 @@
+<div ng-controller="user.userListCtrl">
+	<div class="c-body-box">
+		<form class="form-horizontal" role="form" method='post'>
+			<div class="form-group">
+				<div class="col-md-4">
+					<label class="col-md-3 control-label">帐号：</label>
+					<div class="col-md-9">
+						<input type="email" class="form-control">
+					</div>
+				</div>
+				<div class="col-md-4">
+					<label class="col-md-3 control-label">姓名：</label>
+					<div class="col-md-9">
+						<input type="email" class="form-control">
+					</div>
+				</div>
+				<div class="col-md-4">
+					<button type="button" class="btn btn-primary" ng-click=""><i class="fa fa-search fa-fw"></i> 查询</button>
+				</div>
+			</div>
+		</form>
+
+		<div class="c-datatable-box">
+			<table class="table table-bordered table-hover ">
+				<thead>
+					<tr>
+						<th class="text-center col-md-1">编号</th>
+						<th class="text-center col-md-1">帐号</th>
+						<th class="text-center col-md-1">姓名</th>
+						<th class="text-center col-md-1">年龄</th>
+						<th class="text-center col-md-1">电话</th>
+						<th class="text-center col-md-1">创建人</th>
+						<th class="text-center col-md-1">创建时间</th>
+						<th class="text-center col-md-1">操作</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr ng-repeat="item in list">
+						<td class="text-center" ng-bind="item.num"></td>
+						<td class="text-center" ng-bind="item.name"></td>
+						<td class="text-center" ng-bind="item.age"></td>
+						<td class="text-center" ng-bind="item.salary"></td>
+						<td class="text-center" ng-bind="item.phone"></td>
+						<td class="text-center" ng-bind="item.createTime"></td>
+						<td class="text-center" ng-bind="item.createTime"></td>
+						<td class="text-center">
+							<button class="btn  btn-info btn-sm" ng-click="view($index,item)">查看</button>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			<div cjhme-data-pager options="dataTableConfig" receive="dataPagerReceive" search="dataPagerSearch"></div>
+		</div>
+
+	</div>
+
+</div>

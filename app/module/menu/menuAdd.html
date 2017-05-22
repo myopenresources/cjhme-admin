@@ -1,0 +1,96 @@
+<div ng-controller="menu.menuAddCtrl">
+	<div class="c-body-box">
+		<form class="form-horizontal" role="form" method='post'>
+			<p class="c-line-title">菜单信息</p>
+			<div class="form-group">
+				
+				<div class="col-md-12">
+					<div class="form-group">
+						<div class="col-md-6">
+							<label class="col-md-3 control-label"> 父菜单：</label>
+							<div class="col-md-9">
+								<cjhme-select-tree tree-data="menuData" options="options" placeholder="请选择..." ng-model="formObj.menuParentId " box-width="300" box-height="200" instance="menuInstance"></cjhme-select-tree>
+							</div>
+						</div>
+						
+						<div class="col-md-6">
+							<label class="col-md-3 control-label"><span class="text-danger">*</span> 名称：</label>
+							<div class="col-md-9">
+								<input type="text" class="form-control" placeholder="请输入名称" ng-model="formObj.menuName">
+							</div>
+						</div>
+					</div>
+					
+					<div class="form-group">
+						<div class="col-md-6">
+							<label class="col-md-3 control-label"><span class="text-danger">*</span> 编号：</label>
+							<div class="col-md-9">
+								<input type="text" class="form-control" placeholder="请输入编号" ng-model="formObj.menuNo">
+							</div>
+						</div>
+						<div class="col-md-6">
+							<label class="col-md-3 control-label"><span class="text-danger">*</span> 地址：</label>
+							<div class="col-md-9">
+								<input type="text" class="form-control" placeholder="请输入地址" ng-model="formObj.menuUrl">
+							</div>
+						</div>
+					</div>
+					
+					<div class="form-group">
+						<div class="col-md-6">
+							<label class="col-md-3 control-label"><span class="text-danger">*</span> 图标：</label>
+							<div class="col-md-9">
+								<input type="text" class="form-control" placeholder="请输入图标" ng-model="formObj.menuIcon">
+							</div>
+						</div>
+						<div class="col-md-6">
+							<label class="col-md-3 control-label"><span class="text-danger">*</span> 序号：</label>
+							<div class="col-md-9">
+								<input type="text" class="form-control" placeholder="请输入序号" ng-model="formObj.menuNum">
+							</div>
+						</div>
+					</div>
+					
+					
+					
+					<div class="form-group">
+						<div class="col-md-6">
+							<label class="col-md-3 control-label"><span class="text-danger">*</span> 是否展开：</label>
+							<div class="col-md-9">
+								<ui-select ng-model="formObj.isExpend" ng-change="stateIsExpend();">
+									<ui-select-match placeholder="请选是否展开">{{$select.selected.name}}</ui-select-match>
+									<ui-select-choices repeat="item in isExpendList">
+										<div ng-bind="item.name"></div>
+									</ui-select-choices>
+								</ui-select>
+							</div>
+						</div>
+						
+						<div class="col-md-6">
+							<label class="col-md-3 control-label"><span class="text-danger">*</span> 状态：</label>
+							<div class="col-md-9">
+								<ui-select ng-model="formObj.state" ng-change="stateSelect();">
+									<ui-select-match placeholder="请选状态">{{$select.selected.name}}</ui-select-match>
+									<ui-select-choices repeat="item in stateList">
+										<div ng-bind="item.name"></div>
+									</ui-select-choices>
+								</ui-select>
+							</div>
+						</div>
+					</div>
+					
+					<div class="row">
+						<div class="col-md-offset-1 col-md-10">
+							<button type="button" class="btn btn-primary" ng-click="save();"><i class="fa fa-save fa-fw"></i> 保存</button>&nbsp;
+							<button type="button" class="btn btn-success" ng-click="saveAndBack();"><i class="fa fa-save fa-fw"></i> 保存并返回</button>
+						</div>
+					</div>
+					
+				</div>
+
+			</div>
+
+		</form>
+
+	</div>
+</div>

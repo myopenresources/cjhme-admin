@@ -1,0 +1,48 @@
+<div ng-controller="demo.chartCtrl">
+	<div class="c-body-box">
+		<p class="c-line-title"><i class="fa fa-file-text-o"></i> 使用说明</p>
+		<div class="row">
+			<div class="col-md-12">
+				<div class="col-md-12">
+					<p class="c-sub-line-title">描述：</p>
+					<section class="c-content-txt">
+						<code>
+						   图表依赖Chart.min.js与angular-chart.min.js，使用时需要引入这两个js，同时angularjs模块添加'chart.js'，具体使用参考 <a href="https://github.com/chinmaymk/angular-charts" target="_blank">点击此处</a>
+						</code>
+					</section>
+
+				</div>
+			</div>
+		</div>
+
+		<p class="c-line-title c-margin-t15"> <i class="fa fa-file-code-o"></i> 示例</p>
+		<div class="row">
+			<div class="col-md-12">
+				<div class="col-md-12">
+					<p class="c-sub-line-title">线性图示例</p>
+					<div class="row" style="margin-bottom: 20px;">
+						<div class="col-md-12">
+							<canvas class="chart chart-line" chart-data="lineData" chart-labels="lineLabels" chart-series="lineSeries" chart-options="lineOptions" chart-dataset-override="lineDatasetOverride" chart-click="lineClick"> </canvas>
+						</div>
+					</div>
+
+					<p class="c-sub-line-title">柱状图示例</p>
+					<div class="row" style="margin-bottom: 20px;">
+						<div class="col-md-12">
+							<canvas class="chart chart-bar" chart-data="barData" chart-labels="barLabels"></canvas>
+						</div>
+					</div>
+
+					<p class="c-sub-line-title">饼图示例</p>
+					<div class="row">
+						<div class="col-md-12">
+							<canvas class="chart chart-polar-area" chart-data="pieData" chart-labels="pieLabels"></canvas>
+						</div>
+					</div>
+
+				</div>
+
+			</div>
+		</div>
+	</div>
+</div>

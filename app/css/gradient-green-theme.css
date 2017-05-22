@@ -1,0 +1,24 @@
+.c-wrapper .left-wrapper {
+	background-color: #0b9c80;
+	background:-webkit-gradient(linear, 0% 0%, 0% 100%,from(#0b9c80), to(#1190d6));
+	background:-webkit-linear-gradient(top, #0b9c80, #1190d6); 
+	background:-moz-linear-gradient(top,#0b9c80,#1190d6);
+	background: -o-linear-gradient(top, #0b9c80, #1190d6);  
+	background: -ms-linear-gradient(top, #0b9c80,  #1190d6); 
+}
+
+.c-l-header {
+	background-color: #19b093;
+}
+
+.c-l-header .c-brand-logo> img {
+	background-color: #07836b;
+}
+
+.c-l-header .c-nav {
+	border-right: 1px solid #0b9c80;
+}
+
+.c-load-modal-bg .c-load-modal {
+	color: #07836b;
+}

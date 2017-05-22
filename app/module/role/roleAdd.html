@@ -1,0 +1,69 @@
+<div ng-controller="role.roleAddCtrl">
+	<div class="c-body-box">
+		<form class="form-horizontal" role="form" method='post'>
+			<div class="form-group">
+				<div class="col-md-12">
+					<p class="c-line-title">角色信息</p>
+					
+					<div class="form-group">
+						<div class="col-md-6">
+							<label class="col-md-3 control-label"><span class="text-danger">*</span> 编号：</label>
+							<div class="col-md-9">
+								<input type="text" class="form-control" ng-model="formObj.roleNo" placeholder="请输入编号">
+							</div>
+						</div>
+						<div class="col-md-6">
+							<label class="col-md-3 control-label"><span class="text-danger">*</span> 名称：</label>
+							<div class="col-md-9">
+								<input type="text" class="form-control" ng-model="formObj.roleName" placeholder="请输入名称">
+							</div>
+						</div>
+					</div>
+
+					<div class="form-group">
+						<div class="col-md-6">
+							<label class="col-md-3 control-label"><span class="text-danger">*</span> 超级管理员：</label>
+							<div class="col-md-9">
+								<ui-select ng-model="formObj.supperRole" ng-change="supperRoleSelect();">
+									<ui-select-match placeholder="请选择超级管理员">{{$select.selected.name}}</ui-select-match>
+									<ui-select-choices repeat="item in supperRoleList">
+										<div ng-bind="item.name"></div>
+									</ui-select-choices>
+								</ui-select>
+							</div>
+						</div>
+						<div class="col-md-6">
+							<label class="col-md-3 control-label"><span class="text-danger">*</span> 状态：</label>
+							<div class="col-md-9">
+								<ui-select ng-model="formObj.state" ng-change="stateSelect();">
+									<ui-select-match placeholder="请选择状态">{{$select.selected.name}}</ui-select-match>
+									<ui-select-choices repeat="item in stateList">
+										<div ng-bind="item.name"></div>
+									</ui-select-choices>
+								</ui-select>
+							</div>
+						</div>
+					</div>
+
+					<div class="form-group">
+						<div class="col-md-6">
+							<label class="col-md-3 control-label">备注：</label>
+							<div class="col-md-9">
+								<textarea rows="3" class="form-control" placeholder="请输入备注" ng-model="formObj.describe"></textarea>
+							</div>
+						</div>
+					</div>
+
+					<div class="row">
+						<div class="col-md-offset-1 col-md-10 ">
+							<button type="button" class="btn btn-primary" ng-click="save();"><i class="fa fa-save fa-fw"></i> 保存</button>&nbsp;
+							<button type="button" class="btn btn-success" ng-click="saveAndBack();"><i class="fa fa-save fa-fw"></i> 保存并返回</button>
+						</div>
+					</div>
+					
+				</div>
+			</div>
+
+		</form>
+	</div>
+</div>

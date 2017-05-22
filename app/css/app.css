@@ -1,0 +1,324 @@
+/**
+ * @cjhme-admin v1.0.1
+ * Copyright 2016 cjh. All Rights Reserved
+ */
+
+
+/*页面统一样式*/
+
+html,
+body {
+	font-size: 14px
+}
+
+
+/*整体部分*/
+
+::-webkit-scrollbar {
+	width: 10px;
+	height: 10px;
+}
+
+
+/*滑动轨道*/
+
+::-webkit-scrollbar-track {
+	background: rgba(0, 0, 0, 0.06);
+}
+
+
+/*滑块*/
+
+::-webkit-scrollbar-thumb {
+	background: rgba(0, 0, 0, 0.08);
+}
+
+
+/*滑块效果*/
+
+::-webkit-scrollbar-thumb:hover {
+	background: rgba(0, 0, 0, 0.15);
+}
+
+/*======wrapper======*/
+
+.c-wrapper {
+	width: 100%;
+	height: 100%;
+	overflow-x: hidden;
+}
+
+.c-wrapper .left-wrapper {
+	width: 239px;
+	height: 100%;
+	background-color: #1190d6;
+	float: left;
+	display: block;
+	-webkit-animation-duration: 1s;
+	animation-duration: 1s;
+	-webkit-animation-fill-mode: both;
+	animation-fill-mode: both -webkit-animation-name: fadeIn;
+	animation-name: fadeIn
+}
+
+.c-wrapper .left-wrapper-c {
+	display: none;
+	-webkit-transition: 0.3s;
+	transition: 0.3s;
+	-moz-transition: 0.3s;
+	-webkit-transition: 0.3s;
+	-o-transition: 0.3s;
+}
+
+.c-wrapper .right-wrapper {
+	position: inherit;
+	height: 100%;
+	margin-left: 239px;
+	background-color: #f5f5f5;
+	-webkit-animation-duration: 1s;
+	animation-duration: 1s;
+	-webkit-animation-fill-mode: both;
+	animation-fill-mode: both -webkit-animation-name: fadeIn;
+	animation-name: fadeIn;
+}
+
+.c-wrapper .right-wrapper-c {
+	position: inherit;
+	height: 100%;
+	margin-left: 0px;
+	background-color: #f5f5f5;
+	-webkit-transition: 0.3s;
+	transition: 0.3s;
+	-moz-transition: 0.3s;
+	-webkit-transition: 0.3s;
+	-o-transition: 0.3s;
+}
+
+
+/*======left header======*/
+
+.c-l-header {
+	position: relative;
+	height: 60px;
+	margin-bottom: 20px;
+	-webkit-backface-visibility: hidden;
+	margin-bottom: 0;
+	border-radius: 0px;
+	border: 0;
+	background-color: #10a2e9;
+}
+
+.c-l-header .c-brand-logo {
+	cursor: pointer;
+	-webkit-animation: fadeIn 1s;
+	-o-animation: fadeIn 1s;
+	animation: fadeIn 1s;
+}
+
+.c-l-header .c-brand-logo> img {
+	margin-left: 15px;
+	border-radius: 50%;
+	-webkit-box-shadow: 1px 3px 6px rgba(0, 0, 0, 0.05);
+	box-shadow: 1px 3px 6px rgba(0, 0, 0, 0.05);
+}
+
+.c-l-header .c-brand-logo> img:hover {
+	-moz-transition: all 0.5s ease-in-out;
+	-webkit-transition: all 0.5s ease-in-out;
+	-o-transition: all 0.5s ease-in-out;
+	-ms-transition: all 0.5s ease-in-out;
+	transition: all 0.5s ease-in-out;
+	-moz-transform: rotateY(-360deg);
+	-webkit-transform: rotateY(-360deg);
+	-o-transform: rotateY(-360deg);
+	-ms-transform: rotateY(-360deg);
+	transform: rotateY(-360deg);
+}
+
+.c-l-header .c-brand-logo> h3 {
+	display: inline-block;
+	vertical-align: -6px;
+	margin-top: 17.5px;
+	color: #fafafa;
+}
+
+.c-l-header .c-nav {
+	overflow-y: auto;
+	margin-top: 7px;
+	margin-left: 5px;
+}
+
+
+/*======right header======*/
+
+.c-r-header {
+	background-color: #ffffff;
+	height: 60px;
+	line-height: 60px;
+	-webkit-box-shadow: 1px 3px 6px rgba(0, 0, 0, 0.05);
+	box-shadow: 1px 3px 6px rgba(0, 0, 0, 0.05);
+}
+
+.c-r-header .c-title {
+	padding-left: 15px;
+	float: left;
+}
+
+.c-r-header .c-title a {
+	vertical-align: 1px;
+	padding-top: 3px;
+	padding-bottom: 3px;
+	padding-left: 6px;
+	padding-right: 6px;
+}
+
+.c-r-header .c-title span {
+	font-size: 17px;
+	font-weight: bold;
+	color: #353535;
+	margin-left: 8px
+}
+
+.c-r-header .c-tools {
+	position: inherit;
+	padding-right: 25px;
+}
+
+.c-r-header .c-tools .nav-pills>li>a {
+	border-radius: 0px;
+	height: 60px;
+	padding-top: 0px
+}
+
+.c-r-header .c-tools .c-list {
+	width: 239px;
+	padding: 10px;
+	z-index: 99999;
+}
+
+.c-r-header .c-tools .c-list> li> div {
+	text-align: center;
+	color: #fff;
+	cursor: pointer;
+	height: 50px;
+	line-height: 50px;
+}
+
+.c-r-header .c-tools .c-list> li> .c-default {
+	background-color: #10a2e9;
+}
+
+.c-r-header .c-tools .c-list> li> .c-default:hover {
+	background-color: #1190d6;
+}
+
+.c-r-header .c-tools .c-list> li> .c-green {
+	background-color: #19b093;
+	margin-top: 10px;
+}
+
+.c-r-header .c-tools .c-list> li> .c-green:hover {
+	background-color: #0b9c80;
+}
+
+.c-r-header .c-tools .c-list> li> .c-blue {
+	background-color: #3abce5;
+	margin-top: 10px;
+}
+
+.c-r-header .c-tools .c-list> li> .c-blue:hover {
+	background-color: #0da6d7;
+}
+
+.c-r-header .c-tools .c-list> li> .c-black {
+	background-color: #364756;
+	margin-top: 10px;
+}
+
+.c-r-header .c-tools .c-list> li> .c-black:hover {
+	background-color: #283846;
+}
+
+.c-r-header .c-tools .c-list> li> .c-red {
+	background-color: #e3625d;
+	margin-top: 10px;
+}
+
+.c-r-header .c-tools .c-list> li> .c-red:hover {
+	background-color: #d25855;
+}
+
+.c-r-header .c-tools .c-list> li> .c-orange {
+	background-color: #d0884d;
+	margin-top: 10px;
+}
+
+.c-r-header .c-tools .c-list> li> .c-orange:hover {
+	background-color: #bd7b46;
+}
+
+.c-r-header .c-tools .c-list> li> .c-gradient-blue {
+	background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#1190d6), to(#16cca3));
+	background: -webkit-linear-gradient(top, #1190d6, #16cca3);
+	background: -moz-linear-gradient(top, #1190d6, #16cca3);
+	background: -o-linear-gradient(top, #1190d6, #16cca3);
+	background: -ms-linear-gradient(top, #1190d6, #16cca3);
+	margin-top: 10px;
+}
+
+.c-r-header .c-tools .c-list> li> .c-gradient-blue:hover {
+	background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#10a2e9), to(#0b9c80));
+	background: -webkit-linear-gradient(top, #10a2e9, #0b9c80);
+	background: -moz-linear-gradient(top, #10a2e9, #0b9c80);
+	background: -o-linear-gradient(top, #10a2e9, #0b9c80);
+	background: -ms-linear-gradient(top, #10a2e9, #0b9c80);
+}
+
+.c-r-header .c-tools .c-list> li> .c-gradient-green {
+	background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#0b9c80), to(#1190d6));
+	background: -webkit-linear-gradient(top, #0b9c80, #1190d6);
+	background: -moz-linear-gradient(top, #0b9c80, #1190d6);
+	background: -o-linear-gradient(top, #0b9c80, #1190d6);
+	background: -ms-linear-gradient(top, #0b9c80, #1190d6);
+	margin-top: 10px;
+}
+
+.c-r-header .c-tools .c-list> li> .c-gradient-green:hover {
+	background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#19b093), to(#10a2e9));
+	background: -webkit-linear-gradient(top, #19b093, #10a2e9);
+	background: -moz-linear-gradient(top, #19b093, #10a2e9);
+	background: -o-linear-gradient(top, #19b093, #10a2e9);
+	background: -ms-linear-gradient(top, #19b093, #10a2e9);
+}
+
+
+/*======right content======*/
+
+.c-r-content {
+	overflow-y: scroll;
+	width: 100%;
+	padding: 15px
+}
+
+
+/**======加载模态框======**/
+
+.c-load-modal-bg {
+	position: absolute;
+	z-index: 999999;
+	left: 0;
+	top: 0;
+	display: none;
+	width: 100%;
+	height: 100%;
+	min-height: 100%;
+	background-color: rgba(230, 230, 230, 0.3);
+}
+
+.c-load-modal-bg .c-load-modal {
+	position: fixed;
+	left: 50%;
+	top: 39%;
+	z-index: 1000000;
+}
+

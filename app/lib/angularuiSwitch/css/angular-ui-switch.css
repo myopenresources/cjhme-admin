@@ -1,0 +1,82 @@
+.ui-switch {
+  background: #fff;
+  border: 1px solid #dfdfdf;
+  position: relative;
+  display: inline-block;
+  box-sizing: content-box;
+  overflow: visible;
+  width: 80px;
+  height: 30px;
+  padding: 0px;
+  margin: 0px;
+  border-radius: 20px;
+  cursor: pointer;
+  box-shadow: rgb(223, 223, 223) 0px 0px 0px 0px inset;
+  transition: 0.3s ease-out all;
+  -webkit-transition: 0.3s ease-out all;
+  top: -1px;
+}
+/*adding a wide width for larger ui-switch text*/
+.ui-switch.wide {
+  width:80px;
+}
+.ui-switch small {
+  background: #fff;
+  border-radius: 100%;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.4);
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  transition: 0.3s ease-out all;
+  -webkit-transition: 0.3s ease-out all;
+}
+.ui-switch.checked {
+  background: rgb(100, 189, 99);
+  border-color: rgb(100, 189, 99);
+}
+.ui-switch.checked small {
+   left: calc(100% - 30px)
+}
+/*wider ui-switch text moves small further to the right*/
+.ui-switch.wide.checked small {
+  left:52px;
+}
+/*styles for ui-switch-text*/
+.ui-switch .ui-switch-text {
+  font-family:Arial, Helvetica, sans-serif;
+  font-size:13px;
+}
+
+.ui-switch .off {
+  display:block;
+  position: absolute;
+  right: 10%;
+  top: 25%;
+  z-index: 0;
+  color:#A9A9A9;
+}
+
+.ui-switch .on {
+  display:none;
+   z-index: 0;
+  color:#fff;
+  position: absolute;
+  top: 25%;
+  left: 9%;
+}
+
+.ui-switch.checked .off {
+  display:none;
+}
+
+.ui-switch.checked .on {
+  display:block;
+
+}
+
+.ui-switch.disabled {
+  opacity: .50;
+  cursor: not-allowed;
+}

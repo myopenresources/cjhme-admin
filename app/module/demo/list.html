@@ -1,0 +1,596 @@
+<div ng-controller="demo.listCtrl">
+	<div class="c-body-box">
+		<div class="c-search-box">
+			<p class="c-line-title"><i class="fa fa-file-text-o"></i> 使用说明</p>
+			<div class="row">
+				<div class="col-md-12">
+					<div class="col-md-12">
+						<p class="c-sub-line-title">描述：</p>
+						<section class="c-content-txt">
+							<code>
+						       提供基本的列表风格。
+						    </code>
+						</section>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<p class="c-line-title c-margin-t15"> <i class="fa fa-file-code-o"></i> 示例</p>
+		<div class="row">
+			<div class="col-md-12">
+				<div class="col-md-12">
+					<form class="form-horizontal" role="form" method='post'>
+						<div class="row">
+							<div class="col-md-4">
+								<label class="col-md-3 control-label">用户名：</label>
+								<div class="col-md-9">
+									<input type="email" class="form-control">
+								</div>
+							</div>
+							<div class="col-md-4">
+								<label class="col-md-3 control-label">真实姓名：</label>
+								<div class="col-md-9">
+									<input type="email" class="form-control">
+								</div>
+							</div>
+							<div class="col-md-4">
+								<button type="button" class="btn btn-primary" ng-click="search();"><i class="fa fa-search fa-fw"></i> 查询</button>
+							</div>
+						</div>
+					</form>
+
+					<div class="table-responsive c-margin-t15">
+						<table class="table table-bordered table-hover table-striped">
+							<thead>
+								<tr>
+									<th>
+										<div style="width:50px">#</div>
+									</th>
+									<th>
+										<div style="width:150px">名称</div>
+									</th>
+									<th>
+										<div style="width:80px">型号</div>
+									</th>
+									<th>
+										<div style="width:500px">描述</div>
+									</th>
+									<th>
+										<div style="width:50px">价格</div>
+									</th>
+									<th>
+										<div style="width:100px">产地</div>
+									</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>1</td>
+									<td>手机1</td>
+									<td>V123</td>
+									<td>国产手机中的战斗机，多年来获得广大用用户的喜爱，本次推出新款，性价比高，实用，回馈广大用户们！</td>
+									<td>$123</td>
+									<td>北京</td>
+								</tr>
+								<tr>
+									<td>2</td>
+									<td>手机2</td>
+									<td>V456</td>
+									<td>国产手机中的战斗机，多年来获得广大用用户的喜爱，本次推出新款，性价比高，实用，回馈广大用户们！</td>
+									<td>$2111</td>
+									<td>上海</td>
+								</tr>
+								<tr>
+									<td>3</td>
+									<td>手机3</td>
+									<td>Vfdf1</td>
+									<td>国产手机中的战斗机，多年来获得广大用用户的喜爱，本次推出新款，性价比高，实用，回馈广大用户们！</td>
+									<td>$21</td>
+									<td>福州</td>
+								</tr>
+								<tr>
+									<td>4</td>
+									<td>手机4</td>
+									<td>n133</td>
+									<td>国产手机中的战斗机，多年来获得广大用用户的喜爱，本次推出新款，性价比高，实用，回馈广大用户们！</td>
+									<td>$21</td>
+									<td>天津</td>
+								</tr>
+								<tr>
+									<td>5</td>
+									<td>手机5</td>
+									<td>n123</td>
+									<td>国产手机中的战斗机，多年来获得广大用用户的喜爱，本次推出新款，性价比高，实用，回馈广大用户们！</td>
+									<td>$21</td>
+									<td>天津</td>
+								</tr>
+								<tr>
+									<td>6</td>
+									<td>手机6</td>
+									<td>n123</td>
+									<td>国产手机中的战斗机，多年来获得广大用用户的喜爱，本次推出新款，性价比高，实用，回馈广大用户们！</td>
+									<td>$21</td>
+									<td>天津</td>
+								</tr>
+								<tr>
+									<td>7</td>
+									<td>手机7</td>
+									<td>n123</td>
+									<td>国产手机中的战斗机，多年来获得广大用用户的喜爱，本次推出新款，性价比高，实用，回馈广大用户们！</td>
+									<td>$21</td>
+									<td>天津</td>
+								</tr>
+								<tr>
+									<td>8</td>
+									<td>手机8</td>
+									<td>n123</td>
+									<td>国产手机中的战斗机，多年来获得广大用用户的喜爱，本次推出新款，性价比高，实用，回馈广大用户们！</td>
+									<td>$21</td>
+									<td>天津</td>
+								</tr>
+								<tr>
+									<td>9</td>
+									<td>手机9</td>
+									<td>n123</td>
+									<td>国产手机中的战斗机，多年来获得广大用用户的喜爱，本次推出新款，性价比高，实用，回馈广大用户们！</td>
+									<td>$21</td>
+									<td>天津</td>
+								</tr>
+								<tr>
+									<td>10</td>
+									<td>手机10</td>
+									<td>n123</td>
+									<td>国产手机中的战斗机，多年来获得广大用用户的喜爱，本次推出新款，性价比高，实用，回馈广大用户们！</td>
+									<td>$21</td>
+									<td>天津</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+
+					<nav>
+						<ul class="pagination">
+							<li>
+								<a href="#">&laquo;</a>
+							</li>
+							<li>
+								<a href="#">1</a>
+							</li>
+							<li>
+								<a href="#">2</a>
+							</li>
+							<li>
+								<a href="#">3</a>
+							</li>
+							<li>
+								<a href="#">4</a>
+							</li>
+							<li>
+								<a href="#">5</a>
+							</li>
+							<li>
+								<a href="#">&raquo;</a>
+							</li>
+						</ul>
+					</nav>
+
+				</div>
+			</div>
+		</div>
+
+		<div class="panel panel-default">
+			<div class="panel-heading">列表</div>
+			<div class="panel-body">
+				<div class="c-search-box">
+					<form class="form-horizontal" role="form" method='post'>
+
+						<div class="row">
+							<div class="col-md-4">
+								<label class="col-md-3 control-label">用户名：</label>
+								<div class="col-md-9">
+									<input type="email" class="form-control">
+								</div>
+							</div>
+							<div class="col-md-4">
+								<label class="col-md-3 control-label">真实姓名：</label>
+								<div class="col-md-9">
+									<input type="email" class="form-control">
+								</div>
+							</div>
+							<div class="col-md-4">
+								<button type="button" class="btn btn-primary" ng-click="search();"><i class="fa fa-search fa-fw"></i> 查询</button>
+							</div>
+						</div>
+
+					</form>
+				</div>
+				<div class="table-responsive">
+					<table class="table table-bordered table-hover table-striped">
+						<thead>
+							<tr>
+								<th>
+									<div style="width:50px">#</div>
+								</th>
+								<th>
+									<div style="width:150px">名称</div>
+								</th>
+								<th>
+									<div style="width:80px">型号</div>
+								</th>
+								<th>
+									<div style="width:500px">描述</div>
+								</th>
+								<th>
+									<div style="width:50px">价格</div>
+								</th>
+								<th>
+									<div style="width:100px">产地</div>
+								</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>1</td>
+								<td>手机1</td>
+								<td>V123</td>
+								<td>国产手机中的战斗机，多年来获得广大用用户的喜爱，本次推出新款，性价比高，实用，回馈广大用户们！</td>
+								<td>$123</td>
+								<td>北京</td>
+							</tr>
+							<tr>
+								<td>2</td>
+								<td>手机2</td>
+								<td>V456</td>
+								<td>国产手机中的战斗机，多年来获得广大用用户的喜爱，本次推出新款，性价比高，实用，回馈广大用户们！</td>
+								<td>$2111</td>
+								<td>上海</td>
+							</tr>
+							<tr>
+								<td>3</td>
+								<td>手机3</td>
+								<td>Vfdf1</td>
+								<td>国产手机中的战斗机，多年来获得广大用用户的喜爱，本次推出新款，性价比高，实用，回馈广大用户们！</td>
+								<td>$21</td>
+								<td>福州</td>
+							</tr>
+							<tr>
+								<td>4</td>
+								<td>手机4</td>
+								<td>n133</td>
+								<td>国产手机中的战斗机，多年来获得广大用用户的喜爱，本次推出新款，性价比高，实用，回馈广大用户们！</td>
+								<td>$21</td>
+								<td>天津</td>
+							</tr>
+							<tr>
+								<td>5</td>
+								<td>手机5</td>
+								<td>n123</td>
+								<td>国产手机中的战斗机，多年来获得广大用用户的喜爱，本次推出新款，性价比高，实用，回馈广大用户们！</td>
+								<td>$21</td>
+								<td>天津</td>
+							</tr>
+							<tr>
+								<td>6</td>
+								<td>手机6</td>
+								<td>n123</td>
+								<td>国产手机中的战斗机，多年来获得广大用用户的喜爱，本次推出新款，性价比高，实用，回馈广大用户们！</td>
+								<td>$21</td>
+								<td>天津</td>
+							</tr>
+							<tr>
+								<td>7</td>
+								<td>手机7</td>
+								<td>n123</td>
+								<td>国产手机中的战斗机，多年来获得广大用用户的喜爱，本次推出新款，性价比高，实用，回馈广大用户们！</td>
+								<td>$21</td>
+								<td>天津</td>
+							</tr>
+							<tr>
+								<td>8</td>
+								<td>手机8</td>
+								<td>n123</td>
+								<td>国产手机中的战斗机，多年来获得广大用用户的喜爱，本次推出新款，性价比高，实用，回馈广大用户们！</td>
+								<td>$21</td>
+								<td>天津</td>
+							</tr>
+							<tr>
+								<td>9</td>
+								<td>手机9</td>
+								<td>n123</td>
+								<td>国产手机中的战斗机，多年来获得广大用用户的喜爱，本次推出新款，性价比高，实用，回馈广大用户们！</td>
+								<td>$21</td>
+								<td>天津</td>
+							</tr>
+							<tr>
+								<td>10</td>
+								<td>手机10</td>
+								<td>n123</td>
+								<td>国产手机中的战斗机，多年来获得广大用用户的喜爱，本次推出新款，性价比高，实用，回馈广大用户们！</td>
+								<td>$21</td>
+								<td>天津</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+
+		<div class="panel c-panel-w">
+			<div class="panel-heading">
+				<div class="panel-title"><i class="fa fa-list fa-fw"></i>列表</div>
+			</div>
+			<div class="panel-body">
+				<div class="c-search-box">
+					<form class="form-horizontal" role="form" method='post'>
+
+						<div class="row">
+							<div class="col-md-4">
+								<label class="col-md-3 control-label">用户名：</label>
+								<div class="col-md-9">
+									<input type="email" class="form-control">
+								</div>
+							</div>
+							<div class="col-md-4">
+								<label class="col-md-3 control-label">真实姓名：</label>
+								<div class="col-md-9">
+									<input type="email" class="form-control">
+								</div>
+							</div>
+							<div class="col-md-4">
+								<button type="button" class="btn btn-primary" ng-click="search();"><i class="fa fa-search fa-fw"></i> 查询</button>
+							</div>
+						</div>
+
+					</form>
+				</div>
+				<div class="table-responsive">
+					<table class="table table-bordered table-hover table-striped">
+						<thead>
+							<tr>
+								<th>
+									<div style="width:50px">#</div>
+								</th>
+								<th>
+									<div style="width:150px">名称</div>
+								</th>
+								<th>
+									<div style="width:80px">型号</div>
+								</th>
+								<th>
+									<div style="width:500px">描述</div>
+								</th>
+								<th>
+									<div style="width:50px">价格</div>
+								</th>
+								<th>
+									<div style="width:100px">产地</div>
+								</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>1</td>
+								<td>手机1</td>
+								<td>V123</td>
+								<td>国产手机中的战斗机，多年来获得广大用用户的喜爱，本次推出新款，性价比高，实用，回馈广大用户们！</td>
+								<td>$123</td>
+								<td>北京</td>
+							</tr>
+							<tr>
+								<td>2</td>
+								<td>手机2</td>
+								<td>V456</td>
+								<td>国产手机中的战斗机，多年来获得广大用用户的喜爱，本次推出新款，性价比高，实用，回馈广大用户们！</td>
+								<td>$2111</td>
+								<td>上海</td>
+							</tr>
+							<tr>
+								<td>3</td>
+								<td>手机3</td>
+								<td>Vfdf1</td>
+								<td>国产手机中的战斗机，多年来获得广大用用户的喜爱，本次推出新款，性价比高，实用，回馈广大用户们！</td>
+								<td>$21</td>
+								<td>福州</td>
+							</tr>
+							<tr>
+								<td>4</td>
+								<td>手机4</td>
+								<td>n133</td>
+								<td>国产手机中的战斗机，多年来获得广大用用户的喜爱，本次推出新款，性价比高，实用，回馈广大用户们！</td>
+								<td>$21</td>
+								<td>天津</td>
+							</tr>
+							<tr>
+								<td>5</td>
+								<td>手机5</td>
+								<td>n123</td>
+								<td>国产手机中的战斗机，多年来获得广大用用户的喜爱，本次推出新款，性价比高，实用，回馈广大用户们！</td>
+								<td>$21</td>
+								<td>天津</td>
+							</tr>
+							<tr>
+								<td>6</td>
+								<td>手机6</td>
+								<td>n123</td>
+								<td>国产手机中的战斗机，多年来获得广大用用户的喜爱，本次推出新款，性价比高，实用，回馈广大用户们！</td>
+								<td>$21</td>
+								<td>天津</td>
+							</tr>
+							<tr>
+								<td>7</td>
+								<td>手机7</td>
+								<td>n123</td>
+								<td>国产手机中的战斗机，多年来获得广大用用户的喜爱，本次推出新款，性价比高，实用，回馈广大用户们！</td>
+								<td>$21</td>
+								<td>天津</td>
+							</tr>
+							<tr>
+								<td>8</td>
+								<td>手机8</td>
+								<td>n123</td>
+								<td>国产手机中的战斗机，多年来获得广大用用户的喜爱，本次推出新款，性价比高，实用，回馈广大用户们！</td>
+								<td>$21</td>
+								<td>天津</td>
+							</tr>
+							<tr>
+								<td>9</td>
+								<td>手机9</td>
+								<td>n123</td>
+								<td>国产手机中的战斗机，多年来获得广大用用户的喜爱，本次推出新款，性价比高，实用，回馈广大用户们！</td>
+								<td>$21</td>
+								<td>天津</td>
+							</tr>
+							<tr>
+								<td>10</td>
+								<td>手机10</td>
+								<td>n123</td>
+								<td>国产手机中的战斗机，多年来获得广大用用户的喜爱，本次推出新款，性价比高，实用，回馈广大用户们！</td>
+								<td>$21</td>
+								<td>天津</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+
+		<div class="panel panel-primary">
+			<div class="panel-heading">列表</div>
+			<div class="panel-body">
+				<div class="c-search-box">
+					<form class="form-horizontal" role="form" method='post'>
+
+						<div class="row">
+							<div class="col-md-4">
+								<label class="col-md-3 control-label">用户名：</label>
+								<div class="col-md-9">
+									<input type="email" class="form-control">
+								</div>
+							</div>
+							<div class="col-md-4">
+								<label class="col-md-3 control-label">真实姓名：</label>
+								<div class="col-md-9">
+									<input type="email" class="form-control">
+								</div>
+							</div>
+							<div class="col-md-4">
+								<button type="button" class="btn btn-primary" ng-click="search();"><i class="fa fa-search fa-fw"></i> 查询</button>
+							</div>
+						</div>
+
+					</form>
+
+					<div class="table-responsive c-margin-t15">
+						<table class="table table-bordered table-hover table-striped">
+							<thead>
+								<tr>
+									<th>
+										<div style="width:50px">#</div>
+									</th>
+									<th>
+										<div style="width:150px">名称</div>
+									</th>
+									<th>
+										<div style="width:80px">型号</div>
+									</th>
+									<th>
+										<div style="width:500px">描述</div>
+									</th>
+									<th>
+										<div style="width:50px">价格</div>
+									</th>
+									<th>
+										<div style="width:100px">产地</div>
+									</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>1</td>
+									<td>手机1</td>
+									<td>V123</td>
+									<td>国产手机中的战斗机，多年来获得广大用用户的喜爱，本次推出新款，性价比高，实用，回馈广大用户们！</td>
+									<td>$123</td>
+									<td>北京</td>
+								</tr>
+								<tr>
+									<td>2</td>
+									<td>手机2</td>
+									<td>V456</td>
+									<td>国产手机中的战斗机，多年来获得广大用用户的喜爱，本次推出新款，性价比高，实用，回馈广大用户们！</td>
+									<td>$2111</td>
+									<td>上海</td>
+								</tr>
+								<tr>
+									<td>3</td>
+									<td>手机3</td>
+									<td>Vfdf1</td>
+									<td>国产手机中的战斗机，多年来获得广大用用户的喜爱，本次推出新款，性价比高，实用，回馈广大用户们！</td>
+									<td>$21</td>
+									<td>福州</td>
+								</tr>
+								<tr>
+									<td>4</td>
+									<td>手机4</td>
+									<td>n133</td>
+									<td>国产手机中的战斗机，多年来获得广大用用户的喜爱，本次推出新款，性价比高，实用，回馈广大用户们！</td>
+									<td>$21</td>
+									<td>天津</td>
+								</tr>
+								<tr>
+									<td>5</td>
+									<td>手机5</td>
+									<td>n123</td>
+									<td>国产手机中的战斗机，多年来获得广大用用户的喜爱，本次推出新款，性价比高，实用，回馈广大用户们！</td>
+									<td>$21</td>
+									<td>天津</td>
+								</tr>
+								<tr>
+									<td>6</td>
+									<td>手机6</td>
+									<td>n123</td>
+									<td>国产手机中的战斗机，多年来获得广大用用户的喜爱，本次推出新款，性价比高，实用，回馈广大用户们！</td>
+									<td>$21</td>
+									<td>天津</td>
+								</tr>
+								<tr>
+									<td>7</td>
+									<td>手机7</td>
+									<td>n123</td>
+									<td>国产手机中的战斗机，多年来获得广大用用户的喜爱，本次推出新款，性价比高，实用，回馈广大用户们！</td>
+									<td>$21</td>
+									<td>天津</td>
+								</tr>
+								<tr>
+									<td>8</td>
+									<td>手机8</td>
+									<td>n123</td>
+									<td>国产手机中的战斗机，多年来获得广大用用户的喜爱，本次推出新款，性价比高，实用，回馈广大用户们！</td>
+									<td>$21</td>
+									<td>天津</td>
+								</tr>
+								<tr>
+									<td>9</td>
+									<td>手机9</td>
+									<td>n123</td>
+									<td>国产手机中的战斗机，多年来获得广大用用户的喜爱，本次推出新款，性价比高，实用，回馈广大用户们！</td>
+									<td>$21</td>
+									<td>天津</td>
+								</tr>
+								<tr>
+									<td>10</td>
+									<td>手机10</td>
+									<td>n123</td>
+									<td>国产手机中的战斗机，多年来获得广大用用户的喜爱，本次推出新款，性价比高，实用，回馈广大用户们！</td>
+									<td>$21</td>
+									<td>天津</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
