@@ -1,6 +1,3 @@
-# @cjhme-admin v1.0.1
-# Copyright 2016 cjh. All Rights Reserved
-
 # 项目描述
 cjhme-admin是一个基于Angularjs1.4.6、Jquery1.11.3、Bootstrap3.3.5的后台管理系统
 
