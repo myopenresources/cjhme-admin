@@ -1,6 +1,12 @@
 # 项目描述
 cjhme-admin是一个基于Angularjs1.4.6、Jquery1.11.3、Bootstrap3.3.5的后台管理系统
 
+# 界面展示
+<img src="https://github.com/332557712/cjhme-admin/cc/c0.png" width="960" height="515" />
+<img src="https://github.com/332557712/cjhme-admin/cc/c1.png" width="960" height="515" />
+<img src="https://github.com/332557712/cjhme-admin/cc/c2.png" width="960" height="515" />
+
+
 # 运行项目
 1.使用node运行
   1.1.node js进入到项目目录，运行： `scripts/web-server.js`
